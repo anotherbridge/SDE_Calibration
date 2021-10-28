@@ -1,0 +1,27 @@
+layers Package
+==============
+
+:mod:`layers` Package
+---------------------
+
+.. automodule:: sde_calibration.dnn_estimators.layers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`dense_mixture` Module
+---------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.layers.dense_mixture
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`mc_dropout` Module
+------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.layers.mc_dropout
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

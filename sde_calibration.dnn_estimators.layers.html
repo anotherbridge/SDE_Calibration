@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>layers Package &mdash; SDE Calibration 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="dnn_estimators Package" href="sde_calibration.dnn_estimators.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SDE Calibration
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sde_calibration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sde_calibration.html">sde_calibration Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_calibration</span></code> Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.estimators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">estimators</span></code> Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">exceptions</span></code> Module</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="sde_calibration.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.classic_estimators.html">classic_estimators Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.common.html">common Package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="sde_calibration.dnn_estimators.html">dnn_estimators Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDE Calibration</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">sde_calibration</a> &raquo;</li>
+          <li><a href="sde_calibration.html">sde_calibration Package</a> &raquo;</li>
+          <li><a href="sde_calibration.dnn_estimators.html">dnn_estimators Package</a> &raquo;</li>
+      <li>layers Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sde_calibration.dnn_estimators.layers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="layers-package">
+<h1>layers Package<a class="headerlink" href="#layers-package" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">layers</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-sde_calibration.dnn_estimators.layers"></span><p>Package provides custom layers that are used for some of the models used in the
+estimators.</p>
+</section>
+<section id="module-sde_calibration.dnn_estimators.layers.dense_mixture">
+<span id="dense-mixture-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">dense_mixture</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.layers.dense_mixture" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.layers.dense_mixture.DenseMixture">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.layers.dense_mixture.</span></span><span class="sig-name descname"><span class="pre">DenseMixture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_dimensionality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.layers.dense_mixture.DenseMixture" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Class providing a dense layer that is setup to be used for a mixture density
+network (MDN)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_components</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Gives the number of components in the Gaussian mixture
+model (GMM).</p>
+<blockquote>
+<div><p><a href="#id12"><span class="problematic" id="id13">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">10</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>label_dimensionality</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of dimensions for the response variables.
+<a href="#id14"><span class="problematic" id="id15">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional keyword arguments passed to the base class
+<code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code>. The documentation
+can be found <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Layer">here</a>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.layers.dense_mixture.DenseMixture.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.layers.dense_mixture.DenseMixture.call" title="Permalink to this definition"></a></dt>
+<dd><p>This is where the layer’s logic lives.</p>
+<p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
+from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
+layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
+method to support masking.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id4"><span class="problematic" id="id5">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id6"><span class="problematic" id="id7">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.layers.dense_mixture.DenseMixture.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.layers.dense_mixture.DenseMixture.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the config of the layer.</p>
+<p>A layer config is a Python dictionary (serializable)
+containing the configuration of a layer.
+The same layer can be reinstantiated later
+(without its trained weights) from this configuration.</p>
+<p>The config of a layer does not include connectivity
+information, nor the layer class name. These are handled
+by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Python dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.layers.mc_dropout">
+<span id="mc-dropout-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">mc_dropout</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.layers.mc_dropout" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.layers.mc_dropout.MCDropout">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.layers.mc_dropout.</span></span><span class="sig-name descname"><span class="pre">MCDropout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.layers.mc_dropout.MCDropout" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.layers.core.Dropout</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.layers.mc_dropout.MCDropout.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.layers.mc_dropout.MCDropout.call" title="Permalink to this definition"></a></dt>
+<dd><p>This is where the layer’s logic lives.</p>
+<p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
+from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
+layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
+method to support masking.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id8"><span class="problematic" id="id9">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id10"><span class="problematic" id="id11">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sde_calibration.dnn_estimators.html" class="btn btn-neutral float-left" title="dnn_estimators Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andre Breuer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

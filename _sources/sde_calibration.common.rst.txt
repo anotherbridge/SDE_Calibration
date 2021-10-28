@@ -1,0 +1,35 @@
+common Package
+==============
+
+:mod:`common` Package
+---------------------
+
+.. automodule:: sde_calibration.common
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`kde` Module
+-----------------
+
+.. automodule:: sde_calibration.common.kde
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`test_problems` Module
+---------------------------
+
+.. automodule:: sde_calibration.common.test_problems
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`utils` Module
+-------------------
+
+.. automodule:: sde_calibration.common.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

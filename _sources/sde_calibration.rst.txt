@@ -1,0 +1,36 @@
+sde_calibration Package
+=======================
+
+:mod:`sde_calibration` Package
+------------------------------
+
+.. automodule:: sde_calibration.__init__
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`estimators` Module
+------------------------
+
+.. automodule:: sde_calibration.estimators
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`exceptions` Module
+------------------------
+
+.. automodule:: sde_calibration.exceptions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+    sde_calibration.classic_estimators
+    sde_calibration.common
+    sde_calibration.dnn_estimators
+

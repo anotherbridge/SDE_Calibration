@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dnn_estimators Package &mdash; SDE Calibration 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="layers Package" href="sde_calibration.dnn_estimators.layers.html" />
+    <link rel="prev" title="common Package" href="sde_calibration.common.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SDE Calibration
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sde_calibration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sde_calibration.html">sde_calibration Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_calibration</span></code> Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.estimators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">estimators</span></code> Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">exceptions</span></code> Module</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="sde_calibration.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.classic_estimators.html">classic_estimators Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.common.html">common Package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">dnn_estimators Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDE Calibration</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">sde_calibration</a> &raquo;</li>
+          <li><a href="sde_calibration.html">sde_calibration Package</a> &raquo;</li>
+      <li>dnn_estimators Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sde_calibration.dnn_estimators.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dnn-estimators-package">
+<h1>dnn_estimators Package<a class="headerlink" href="#dnn-estimators-package" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">dnn_estimators</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-sde_calibration.dnn_estimators"></span><p>Package provides deep learning based estimators for the calibration of SDEs.
+The estimators can be categorized into two types of estimators:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Regression-based estimators:</dt><dd><ul>
+<li><p><a class="reference internal" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor" title="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">AdversarialRegressor</span></code></a></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParametricRegressor</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">NonParametricRegressor</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Likelihood-informed estimators:</dt><dd><ul>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">InvariantDensitEstimator</span></code></p></li>
+<li><p><a class="reference internal" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator" title="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MixtureDensityEstimator</span></code></a></p></li>
+<li><p><a class="reference internal" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN" title="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN"><code class="xref py py-class docutils literal notranslate"><span class="pre">SDEInformedGAN</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>All other modules provided by this package are helpers to enable an easier usage
+of the actual estimators.</p>
+</section>
+<section id="module-sde_calibration.dnn_estimators.adversarial_regressor">
+<span id="adversarial-regressor-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">adversarial_regressor</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.adversarial_regressor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.adversarial_regressor.</span></span><span class="sig-name descname"><span class="pre">AdversarialRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gen_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discr_layers</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.RegressionEstimator" title="sde_calibration.estimators.RegressionEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.RegressionEstimator</span></code></a></p>
+<p>AdversarialRegression estimator. By performing an Ito-Taylor expansion of the
+random variable describing the process, the drift and diffusion coefficients
+can be approximated using conditional expectations. Therefore the time series 
+data is split up in a way s.t. the aforementioned expectation is approximated. 
+The approximation is performed by modelling the conditional expectation by 
+a Generative Adversarial Network (GAN).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>gen_layers</strong> (<em>list</em>) – Setup for the layers of the generator. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>discr_layers</strong> (<em>list</em>) – Setup for the layers of the discriminator. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the generator, 
+discriminator and the preprocessor. Possible values are given as specified
+by the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> and 
+<a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the parameters provided by <a href="#id4"><span class="problematic" id="id5">**</span></a>kwargs that should be used 
+in the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> class must 
+have the prefix <em>gen_</em> and <em>discr_</em> to indicate the affiliation to the
+generator and discriminator, respectively.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the generator model for a given input. The input 
+is first scaled according to the preprocessor that is initialized, the
+network mode is called and finally the inverse transform is applied to
+the outputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points for evaluating the model.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
+should be used.</p>
+<blockquote>
+<div><p><a href="#id44"><span class="problematic" id="id45">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Predictions of the generator.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mode='drift',</span> <span class="pre">optimizers=[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;],</span> <span class="pre">gan_type='vanilla',</span> <span class="pre">train_metrics=None,</span> <span class="pre">val_metrics=None,</span> <span class="pre">logger=None,</span> <span class="pre">tf_logging=None,</span> <span class="pre">update_steps=[1,</span> <span class="pre">2]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Compiles the GAN estimator to be ready for fitting. This includes 
+setting up the optimizer, metrics, and loggers as well as specifying the
+mode of estimation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A string giving the mode of estimation. Possible options
+are:</p>
+<ul>
+<li><p>drift</p></li>
+<li><p>diffusion</p>
+<blockquote>
+<div><p><a href="#id46"><span class="problematic" id="id47">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+<li><p><strong>optimizers</strong> (<em>[</em><em>tf.keras.optimizers.Optimizer</em><em>, </em><em>tf.keras.optimizers.Optimizer</em><em>]</em><em>, </em><em>optional</em>) – <p>Optimizers that should be used to optimize the loss
+function of the adversarial game.</p>
+<blockquote>
+<div><p><a href="#id48"><span class="problematic" id="id49">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;]</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>gan_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Type of the GAN that should be used. Possible options
+are:</p>
+<ul>
+<li><p>vanilla</p></li>
+<li><p>wasserstein</p></li>
+<li><p>least_squares</p></li>
+<li><p>kl</p></li>
+<li><p>reverse_kl</p>
+<blockquote>
+<div><p><a href="#id50"><span class="problematic" id="id51">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+<li><p><strong>train_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>]</em><em>, </em><em>optional</em>) – Metrics that are used to monitor the training progress.
+<a href="#id52"><span class="problematic" id="id53">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>val_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metrics that are used to monitor the performance on 
+the validation set.</p>
+<blockquote>
+<div><p><a href="#id54"><span class="problematic" id="id55">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Logger to be used for logging the training progress.
+<a href="#id56"><span class="problematic" id="id57">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
+performed. This includes logging the</p>
+<ul>
+<li><p>weights of the network,</p></li>
+<li><p>the training metric, and</p></li>
+<li><p>the validation metric.</p></li>
+</ul>
+<p>The stored data can then be used for further visualization using
+<a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
+provided, the aforementioned parameters are not logged.</p>
+<blockquote>
+<div><p><a href="#id58"><span class="problematic" id="id59">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>update_steps</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – <p>Number of optimization steps that should be performed
+for the generator and discriminator, respectively.</p>
+<blockquote>
+<div><p><a href="#id60"><span class="problematic" id="id61">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the provided string for the mode is invalid.</p></li>
+<li><p><strong>ValueError</strong> – If the string specifying the type of GAN is not any
+of the valid options.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For all parameters that require a list to have the respective
+quantity for the generator as well for the discriminator, the list 
+must contain the parameter for the generator in first place and the
+corresponding parameter for the discriminator in second place.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on the GAN versions used here and some
+other material, the following material is provided:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1406.2661">Generative Adversarial Networks</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1411.1784">Conditional Generative Adversarial Nets</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1910.09106">Adversarial Regression. Generative Adversarial Networks for Non-Linear Regression: Theory and Assessment</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1611.04076">Least Squares Generative Adversarial Networks</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1701.07875">Wasserstein GAN</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1704.00028">Improved Training of Wasserstein GANs</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1606.00709">f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization</a></p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the adversarial training for a certain number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs that should be performed.
+<a href="#id62"><span class="problematic" id="id63">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the configuration of the generator and discriminator networks 
+that is required to create a new instance with the same setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of all relevant parameters given to the constructor.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.get_gan_type">
+<span class="sig-name descname"><span class="pre">get_gan_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.get_gan_type" title="Permalink to this definition"></a></dt>
+<dd><p>Gives access to the GAN type of the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>GAN type being one of the valid options for compilation.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.get_num_parameters">
+<span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of parameters in the model that is used by a certain
+estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.gan_losses">
+<span id="gan-losses-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">gan_losses</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.gan_losses" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.gan_losses.GANLoss">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.gan_losses.</span></span><span class="sig-name descname"><span class="pre">GANLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vanilla'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.gan_losses.GANLoss" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle different GAN losses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>loss_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the loss for a certain GAN type. Possible options
+are:</p>
+<ul>
+<li><p>vanilla</p></li>
+<li><p>least_squares</p></li>
+<li><p>wasserstein</p></li>
+<li><p>kl</p></li>
+<li><p>reverse_kl</p>
+<blockquote>
+<div><p><a href="#id64"><span class="problematic" id="id65">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the GAN type for the loss is not a valid option.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.gan_losses.GANLoss.discriminator">
+<span class="sig-name descname"><span class="pre">discriminator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_real</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_fake</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.gan_losses.GANLoss.discriminator" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the discriminator loss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_real</strong> (<em>tf.Tensor</em>) – The response variables provided by the training set.</p></li>
+<li><p><strong>label_fake</strong> (<em>tf.Tensor</em>) – The response variables predicted by the generator.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments that have to be provided if the loss
+is chosen to be the one of a Wasserstein GAN.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the loss function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the loss is computed for a Wasserstein GAN, the exception
+is thrown if the additional three arguments <em>z_hat</em>, <em>discr</em>, and
+<em>penalty_coeff</em> are missing. In case that any other GAN loss is chosen
+the exception is thrown if any keyword arguments are given.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.gan_losses.GANLoss.generator">
+<span class="sig-name descname"><span class="pre">generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_fake</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.gan_losses.GANLoss.generator" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the generator loss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label_fake</strong> (<em>tf.Tensor</em>) – The response variables predicted by the generator.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the loss function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.invariant_density_estimator">
+<span id="invariant-density-estimator-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">invariant_density_estimator</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.invariant_density_estimator" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.invariant_density_estimator.</span></span><span class="sig-name descname"><span class="pre">InvariantDensityEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penalty_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.dnn_estimators.neural_network.NeuralNetwork</span></code></a>, <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.Estimator" title="sde_calibration.estimators.Estimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.Estimator</span></code></a></p>
+<p>Class for inferring drift and diffusion coefficients of an SDE based on the
+estimation of the invariant density <span class="math notranslate nohighlight">\(\pi \colon \mathbb{R} \to \mathbb{R}\)</span>. 
+The estimator trains a neural network to learn the invariant density of the 
+underlying process. After this the estimated density is used in the stationary 
+Fokker-Planck equation</p>
+<div class="math notranslate nohighlight">
+\[b(x) \pi(x) = \frac{1}{2} \frac{\mathrm{d}}{\mathrm{d}x} (\sigma^2(x) \pi(x))\]</div>
+<p>to infer either the drift coefficient using</p>
+<div class="math notranslate nohighlight">
+\[b(x) = \frac{1}{2 \pi(x)} \frac{\mathrm{d}}{\mathrm{d}x} (\sigma^2(x) \pi(x))\]</div>
+<p>or the diffusion coefficient by using</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2(x) = \frac{2}{\pi(x)} \int_{-\infty}^x b(\xi) \pi(\xi) \mathrm{d} \xi \ .\]</div>
+<p>This does however mean that one of the two coefficients needs to be known
+apriori.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>layers</strong> (<em>list</em>) – Setup for the layers the neural network. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>penalty_weight</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Weight for the penalty term enforcing the neural 
+network to behave like a density function and integrate to one.</p>
+<blockquote>
+<div><p><a href="#id66"><span class="problematic" id="id67">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">20</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
+and the preprocessor. Possible values are given as specified
+by the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> and 
+<a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the weight of the penalty term is chosen to be smaller 
+than zero.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on the Fokker-Planck equation, c.f.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://link.springer.com/book/10.1007/978-0-387-75839-8">Simulation and Inference for Stochastic Differential Equations</a></p></li>
+<li><p><a class="reference external" href="https://link.springer.com/book/10.1007/978-1-4939-1323-7">Stochastic Processes and Applications</a></p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since this estimator is based on the invariant density, it 
+requires the time series data to be stationary. If this cannot be 
+guaranteed, the estimator will not yield any viable results.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the estimated density at the given points. It automatically 
+applies the necessary in- and output scalings that are used to train
+the neural network approximating the invariant density.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points at which to evaluate the density function.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
+<a href="#id68"><span class="problematic" id="id69">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of invariant density function estimates evaluated at the 
+points specified by the input.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.diffusion">
+<span class="sig-name descname"><span class="pre">diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drift_model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.diffusion" title="Permalink to this definition"></a></dt>
+<dd><p>Method to estimate the diffusion term given an array of points <span class="math notranslate nohighlight">\(x\)</span> 
+based on the neural network approximating the invariant density and a
+given drift model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array <span class="math notranslate nohighlight">\(x\)</span> specifying the points at which the diffusion 
+term should be approximated.</p></li>
+<li><p><strong>drift_model</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – Drift model of the underlying stochastic process.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of estimates of the diffusion term based on the stationary 
+Fokker-Planck equation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – If the given drift model is not callable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.drift">
+<span class="sig-name descname"><span class="pre">drift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diffusion_model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.drift" title="Permalink to this definition"></a></dt>
+<dd><p>Method to estimate the drift term given an array of points <span class="math notranslate nohighlight">\(x\)</span> 
+based on the neural network approximating the invariant density and a
+given diffusion model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array <span class="math notranslate nohighlight">\(x\)</span> specifying the points at which the drift term
+should be approximated.</p></li>
+<li><p><strong>diffusion_model</strong> (<em>Callable</em>) – Diffusion model of the underlying stochastic
+process.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of estimates of the drift term based on the stationary 
+Fokker-Planck equation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – If the given diffusion model is not callable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_quad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.invariant_density_estimator.InvariantDensityEstimator.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the model for a certain number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
+<a href="#id70"><span class="problematic" id="id71">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+<li><p><strong>n_quad</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of quadrature points that should be used to 
+approximate the integral in the penalty term to enforce the network
+to behave like a density function.</p>
+<blockquote>
+<div><p><a href="#id72"><span class="problematic" id="id73">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">10000</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.metrics">
+<span id="metrics-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">metrics</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.metrics" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.metrics.AverageLogLikelihood">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.metrics.</span></span><span class="sig-name descname"><span class="pre">AverageLogLikelihood</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'average_log_likelihood'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.metrics.AverageLogLikelihood" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.metrics.Metric</span></code></p>
+<p>Metric that computes the average log likelihood given some log probabilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the metric
+<a href="#id74"><span class="problematic" id="id75">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'average_log_likelihood'</span></code></p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional keyword arguments that can be passed. More 
+information of the keyword arguments can be found on the 
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics/Metric">documentation</a>
+of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.metrics.Metric</span></code> class.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.metrics.AverageLogLikelihood.result">
+<span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.metrics.AverageLogLikelihood.result" title="Permalink to this definition"></a></dt>
+<dd><p>Computes and returns the metric value tensor.</p>
+<p>Result computation is an idempotent operation that simply calculates the
+metric value using the state variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.metrics.AverageLogLikelihood.update_state">
+<span class="sig-name descname"><span class="pre">update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_probs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.metrics.AverageLogLikelihood.update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Accumulates statistics for the metric.</p>
+<p>Note: This function is executed as a graph function in graph mode.
+This means:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Operations on the same resource are executed in textual order.
+This should make it easier to do things like add the updated
+value of a variable to another, for example.</p></li>
+<li><p>You don’t need to worry about collecting the update ops to execute.
+All update ops added to the graph by this function will be executed.</p></li>
+</ol>
+<p>As a result, code should generally work the same way with graph or
+eager execution.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p><a href="#id12"><span class="problematic" id="id13">*</span></a>args:
+<a href="#id14"><span class="problematic" id="id15">**</span></a>kwargs: A mini-batch of inputs to the Metric.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.metrics.LogLikelihood">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.metrics.</span></span><span class="sig-name descname"><span class="pre">LogLikelihood</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log_likelihood'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.metrics.LogLikelihood" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.metrics.Metric</span></code></p>
+<p>Metric that computes the log likelihood given some log probabilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the metric
+<a href="#id76"><span class="problematic" id="id77">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'log_likelihood'</span></code></p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional keyword arguments that can be passed. More 
+information of the keyword arguments can be found on the 
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics/Metric">documentation</a>
+of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.metrics.Metric</span></code> class.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.metrics.LogLikelihood.result">
+<span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.metrics.LogLikelihood.result" title="Permalink to this definition"></a></dt>
+<dd><p>Computes and returns the metric value tensor.</p>
+<p>Result computation is an idempotent operation that simply calculates the
+metric value using the state variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.metrics.LogLikelihood.update_state">
+<span class="sig-name descname"><span class="pre">update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_probs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.metrics.LogLikelihood.update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Accumulates statistics for the metric.</p>
+<p>Note: This function is executed as a graph function in graph mode.
+This means:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Operations on the same resource are executed in textual order.
+This should make it easier to do things like add the updated
+value of a variable to another, for example.</p></li>
+<li><p>You don’t need to worry about collecting the update ops to execute.
+All update ops added to the graph by this function will be executed.</p></li>
+</ol>
+<p>As a result, code should generally work the same way with graph or
+eager execution.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p><a href="#id19"><span class="problematic" id="id20">*</span></a>args:
+<a href="#id21"><span class="problematic" id="id22">**</span></a>kwargs: A mini-batch of inputs to the Metric.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.mixture_density_estimator">
+<span id="mixture-density-estimator-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">mixture_density_estimator</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.mixture_density_estimator" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.mixture_density_estimator.</span></span><span class="sig-name descname"><span class="pre">MixtureDensityEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.dnn_estimators.neural_network.NeuralNetwork</span></code></a>, <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.Estimator" title="sde_calibration.estimators.Estimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.Estimator</span></code></a></p>
+<p>Class for inferring drift and diffusion coefficients of an SDE based on 
+estimting the transition density function 
+<span class="math notranslate nohighlight">\(p(\Delta t_i, X_{i+1} \vert X_i) \equiv p(X_{i+1} \vert X_i)\)</span>
+by a neural network that learns the parameters of a Gaussian Mixture Model (GMM)</p>
+<div class="math notranslate nohighlight">
+\[p_{\theta}(y \vert x) = \sum\limits_{k = 1}^K \alpha_k(x; \theta)
+\mathcal{N}(y; \mu_k(x; \theta), \Sigma_k(x; \theta)) \ .\]</div>
+<p>Based on the learned transition density it is possible to infer the drift 
+and diffusion coefficients approximately, by</p>
+<div class="math notranslate nohighlight">
+\[b(x) \approx \sum\limits_{k = 1}^K \alpha_k(x; \theta) 
+\frac{\mu_k(x; \theta) - x}{\Delta t_i}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2(x) \approx \sum\limits_{k = 1}^K \alpha_k(x; \theta)
+\frac{(\mu_k(x; \theta) - x)^2 + \Sigma_k(x; \theta)}{\Delta t_i}\]</div>
+<p>respectively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>layers</strong> (<em>list</em>) – Setup for the layers the neural network. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
+and the preprocessor. Possible values are given as specified
+by the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> and 
+<a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on mixture density networks, c.f.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://publications.aston.ac.uk/id/eprint/373/">Mixture density networks</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1903.00954#">Conditional Density Estimation with Neural Networks: Best Practices and Benchmarks</a></p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the neural network estimating the coefficients of the GMM. 
+It automatically applies the necessary in- and output scalings that are used to train
+the neural network approximating the invariant density.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points at which to evaluate the density function (nx1).</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
+<a href="#id78"><span class="problematic" id="id79">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List containing the weights of the mixture components (nx1), 
+the means (nx1), and the covariance matrices (nx1x1).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>[tf.Tensor, tf.Tensor, tf.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.diffusion">
+<span class="sig-name descname"><span class="pre">diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.diffusion" title="Permalink to this definition"></a></dt>
+<dd><p>Method to estimate the diffusion term given an array of points <span class="math notranslate nohighlight">\(x\)</span> 
+based on the MDN approximating the transition density function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array <span class="math notranslate nohighlight">\(x\)</span> specifying the points at which the diffusion term
+should be approximated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of estimates of the diffusion term.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.drift">
+<span class="sig-name descname"><span class="pre">drift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.drift" title="Permalink to this definition"></a></dt>
+<dd><p>Method to estimate the drift term given an array of points <span class="math notranslate nohighlight">\(x\)</span> 
+based on the MDN approximating the transition density function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array <span class="math notranslate nohighlight">\(x\)</span> specifying the points at which the drift term
+should be approximated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of estimates of the drift term.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the model for a certain number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
+<a href="#id80"><span class="problematic" id="id81">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.log_prob">
+<span class="sig-name descname"><span class="pre">log_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.log_prob" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the logarithm of the estimated transition density function, i.e.
+<span class="math notranslate nohighlight">\(\log(p(y \vert x))\)</span> at the points specified by the arrays 
+<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(x\)</span> on which the density should be 
+conditioned.</p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(y\)</span> used to compute the transition density.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
+<a href="#id82"><span class="problematic" id="id83">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of values of the logarithm of the transition density function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.prob">
+<span class="sig-name descname"><span class="pre">prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.prob" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the estimated transition density function 
+<span class="math notranslate nohighlight">\(p(y \vert x)\)</span> at the points specified by the arrays 
+<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(x\)</span> on which the density should be 
+conditioned.</p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(y\)</span> used to compute the transition density.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
+<a href="#id84"><span class="problematic" id="id85">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of values of the transition density function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></span><a class="headerlink" href="#sde_calibration.dnn_estimators.mixture_density_estimator.MixtureDensityEstimator.sample" title="Permalink to this definition"></a></dt>
+<dd><p>Samples values from the estimated transition density function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(x\)</span> on which the transition density is
+conditioned.</p></li>
+<li><p><strong>num_samples</strong> (<em>int</em>) – Number of samples that should be drawn from the 
+estimated transition density function.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
+<a href="#id86"><span class="problematic" id="id87">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified number of samples <span class="math notranslate nohighlight">\(y\)</span> for which it holds 
+that <span class="math notranslate nohighlight">\(y \sim p(y \vert x)\)</span></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.neural_network">
+<span id="neural-network-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">neural_network</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.neural_network" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.neural_network.</span></span><span class="sig-name descname"><span class="pre">NeuralNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tanh'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization_penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Model'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class providing an interface for handling feed forward neural networks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layers</strong> (<em>list</em>) – <p>Setup for the layers of the neural network. The layers can be
+provided using two different styles. Each style is explained using an
+examples of usage:</p>
+<ul>
+<li><p>[[1, 10], [50, 50], [100], [1]] creates a neural network with two inputs
+where the first input has dimensionality 1 and the second 10. Then
+both are separately fed through a dense layer, each containing 50
+neurons. After that the results are concatenated fed through an additional 
+fully connected layer with 100 neurons. Finally this is connected to 
+the output having the dimensionality 1.</p></li>
+<li><p>[2, 50, 100, 1] creates a neural network with one input of dimensionality
+2. This input is then fed through a fully connected layer with 50 
+neurons. Afterwards another fully connected layer with 100 neurons
+follows. Finally this result is connected to the output having the 
+dimensionality 1.</p></li>
+</ul>
+</p></li>
+<li><p><strong>hidden_activation</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Activation function that should be used for the
+hidden layers. Possible values for the activations are:</p>
+<ul>
+<li><p>elu</p></li>
+<li><p>linear</p></li>
+<li><p>relu</p></li>
+<li><p>sigmoid</p></li>
+<li><p>softmax</p></li>
+<li><p>softplus</p></li>
+<li><p>swish</p></li>
+<li><p>tanh</p></li>
+</ul>
+<p>Moreover, it is possible to pass any instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.layers.Layer</span></code>
+class. A list can be found <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers">here</a>.</p>
+<blockquote>
+<div><p><a href="#id88"><span class="problematic" id="id89">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'tanh'</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>output_activation</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Activation function that should be applied after 
+the output layer. Possible values for the activation are:</p>
+<ul>
+<li><p>elu</p></li>
+<li><p>linear</p></li>
+<li><p>relu</p></li>
+<li><p>sigmoid</p></li>
+<li><p>softmax</p></li>
+<li><p>softplus</p></li>
+<li><p>swish</p></li>
+<li><p>tanh</p></li>
+</ul>
+<p>Moreover, it is possible to pass any instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.layers.Layer</span></code>
+class. A list can be found <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers">here</a>.</p>
+<blockquote>
+<div><p><a href="#id90"><span class="problematic" id="id91">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'linear'</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>regularization_penalty</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Specifies the strength of an <span class="math notranslate nohighlight">\(L^2\)</span>-regularizer
+that will be used on the weights and biases of the network. If zero is
+provided no regularization is performed.</p>
+<blockquote>
+<div><p><a href="#id92"><span class="problematic" id="id93">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>dropout_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Dropout rate that should be used during training <strong>and</strong>
+prediction. If zero is provided no weights are dropped.</p>
+<blockquote>
+<div><p><a href="#id94"><span class="problematic" id="id95">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.models.Model</span></code> class that is created.
+<a href="#id96"><span class="problematic" id="id97">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'Model'</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the layers list is too short, i.e. if not at least 
+an input, one hidden layer, and one output are specified.</p></li>
+<li><p><strong>ValueError</strong> – If splitted layers are used and in one hidden layer
+more splits are requested than inputs are available.</p></li>
+<li><p><strong>ValueError</strong> – If the hidden activation is chosen different from the
+possible activations.</p></li>
+<li><p><strong>ValueError</strong> – If the output activation is chosen different from the
+possible activations.</p></li>
+<li><p><strong>ValueError</strong> – If the dropout rate does not lie in the interval [0, 1).</p></li>
+<li><p><strong>ValueError</strong> – If the weight of the regularizer that is provided is 
+smaller than zero.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the neural networks core model for a given input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Union</em><em>[</em><em>np.ndarray</em><em>, </em><em>tf.Tensor</em><em>]</em>) – Array of points for evaluating the model.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
+should be used.</p>
+<blockquote>
+<div><p><a href="#id98"><span class="problematic" id="id99">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Predictions of the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">optimizer=&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">train_metric=None</span></em>, <em class="sig-param"><span class="pre">val_metric=None</span></em>, <em class="sig-param"><span class="pre">logger=None</span></em>, <em class="sig-param"><span class="pre">tf_logging=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Compiles the neural network to be ready for fitting. This includes 
+setting up the optimizer, metrics, and loggers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optimizer</strong> (<em>tf.keras.optimizers.Optimizer</em><em>, </em><em>optional</em>) – Optimizer that should be used to minimize the loss function.
+<a href="#id100"><span class="problematic" id="id101">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></code></p></li>
+<li><p><strong>train_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – Metric that is used to monitor the training progress.
+<a href="#id102"><span class="problematic" id="id103">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>val_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metric that is used to monitor the performance on 
+the validation set.</p>
+<blockquote>
+<div><p><a href="#id104"><span class="problematic" id="id105">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Logger to be used for logging the training progress.
+<a href="#id106"><span class="problematic" id="id107">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
+performed. This includes logging the</p>
+<ul>
+<li><p>weights of the network,</p></li>
+<li><p>the training metric, and</p></li>
+<li><p>the validation metric.</p></li>
+</ul>
+<p>The stored data can then be used for further visualization using
+<a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
+provided, the aforementioned parameters are not logged.</p>
+<blockquote>
+<div><p><a href="#id108"><span class="problematic" id="id109">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the model for a certain number of iterations given a dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_dataset</strong> (<em>tf.data.Dataset</em>) – TensorFlow dataset used for the training.</p></li>
+<li><p><strong>validation_dataset</strong> (<em>tf.data.Dataset</em><em>, </em><em>optional</em>) – <p>TensorFlow dataset used for the validating 
+the training progress.</p>
+<blockquote>
+<div><p><a href="#id110"><span class="problematic" id="id111">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
+<a href="#id112"><span class="problematic" id="id113">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the neural
+network is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.from_config">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.from_config" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new instance of this class from a dictionary containing the 
+configuration of the network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – Dictionary containing the configuration of the class.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New instance setup by the given configuration.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sde_calibration.dnn_estimators.NeuralNetwork</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the configuration of the neural network class that is required to
+create a new instance with the same setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of all relevant parameters given to the constructor.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.get_losses">
+<span class="sig-name descname"><span class="pre">get_losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.get_losses" title="Permalink to this definition"></a></dt>
+<dd><p>Gives access to all the losses that are defined by the model and not 
+obtained via gradients. An example includes regularization losses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of losses, where each entry in the list contains the losses
+of one layer.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.get_num_parameters">
+<span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the number of parameters in the neural network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.load">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.load" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a saved model into an instance of the NerualNetwork class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the model is saved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Instance of the neural network class.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sde_calibration.dnn_estimators.NeuralNetwork</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If either no config or no model can be found
+in the path specified.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make it possible to load a model it is necessary that under
+the specified file path, the files <em>config.pkl</em> and <em>model.h5</em> exist.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.plot_model">
+<span class="sig-name descname"><span class="pre">plot_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_shapes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.plot_model" title="Permalink to this definition"></a></dt>
+<dd><p>Converts the neural network internal model to dot format and saves it 
+to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_path</strong> (<em>str</em>) – File name of the image created.</p></li>
+<li><p><strong>show_shapes</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifies whether to display shape information or not.
+<a href="#id114"><span class="problematic" id="id115">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A Jupyter notebook Image object if Jupyter is installed. 
+This enables in-line display of the model plots in notebooks.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_network.NeuralNetwork.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork.save" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the current neural network at in the local memory. This includes
+storing the configuration as well as the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the neural network should be stored.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.neural_regressor">
+<span id="neural-regressor-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">neural_regressor</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.neural_regressor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.neural_regressor.</span></span><span class="sig-name descname"><span class="pre">NeuralRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.dnn_estimators.neural_network.NeuralNetwork</span></code></a>, <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.RegressionEstimator" title="sde_calibration.estimators.RegressionEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.RegressionEstimator</span></code></a></p>
+<p>Class combining the functionalities of the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>
+and the <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.RegressionEstimator" title="sde_calibration.estimators.RegressionEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegressionEstimator</span></code></a> classes.
+It is the baseline for a deep learning regression-based estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>layers</strong> (<em>list</em>) – Setup for the layers the neural network. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
+and the preprocessor. Possible values are given as specified
+by the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> and 
+<a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the neural networks core model for a given input. The input 
+is first scaled according to the preprocessor that is initialized, the
+network mode is called and finally the inverse transform is applied to
+the outputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points for evaluating the model.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
+should be used.</p>
+<blockquote>
+<div><p><a href="#id116"><span class="problematic" id="id117">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Predictions of the model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mode='drift'</span></em>, <em class="sig-param"><span class="pre">optimizer=&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">train_metric=None</span></em>, <em class="sig-param"><span class="pre">val_metric=None</span></em>, <em class="sig-param"><span class="pre">logger=None</span></em>, <em class="sig-param"><span class="pre">tf_logging=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Compiles the neural network to be ready for fitting. This includes 
+setting up the optimizer, metrics, and loggers as well as specifying the
+mode of estimation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A string giving the mode of estimation. Possible options
+are:</p>
+<ul>
+<li><p>drift</p></li>
+<li><p>diffusion</p>
+<blockquote>
+<div><p><a href="#id118"><span class="problematic" id="id119">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+<li><p><strong>optimizer</strong> (<em>tf.keras.optimizers.Optimizer</em><em>, </em><em>optional</em>) – Optimizer that should be used to minimize the loss function.
+<a href="#id120"><span class="problematic" id="id121">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></code></p></li>
+<li><p><strong>train_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – Metric that is used to monitor the training progress.
+<a href="#id122"><span class="problematic" id="id123">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>val_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metric that is used to monitor the performance on 
+the validation set.</p>
+<blockquote>
+<div><p><a href="#id124"><span class="problematic" id="id125">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Logger to be used for logging the training progress.
+<a href="#id126"><span class="problematic" id="id127">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
+performed. This includes logging the</p>
+<ul>
+<li><p>weights of the network,</p></li>
+<li><p>the training metric, and</p></li>
+<li><p>the validation metric.</p></li>
+</ul>
+<p>The stored data can then be used for further visualization using
+<a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
+provided, the aforementioned parameters are not logged.</p>
+<blockquote>
+<div><p><a href="#id128"><span class="problematic" id="id129">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the provided string for the mode is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the model for a certain number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
+<a href="#id130"><span class="problematic" id="id131">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.non_parametric_regressor">
+<span id="non-parametric-regressor-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">non_parametric_regressor</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.non_parametric_regressor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.non_parametric_regressor.NonParametricRegressor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.non_parametric_regressor.</span></span><span class="sig-name descname"><span class="pre">NonParametricRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_quad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.non_parametric_regressor.NonParametricRegressor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor" title="sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor</span></code></a></p>
+<p>Estimator that uses the power of a neural network as a universal approximator
+in order to train a model that is that is approximating the function <span class="math notranslate nohighlight">\(m(\cdot)\)</span>
+satisfying</p>
+<div class="math notranslate nohighlight">
+\[\min\limits_{m \in L^2(\Omega, \mathcal{F}_X, \mathbb{P})}
+\int\limits_V \mathbb{E}[(Y - m(X))^2 \vert X = x] \mathrm{d} x \ ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are random variables in <span class="math notranslate nohighlight">\(L^2(\Omega, \mathcal{F}, \mathbb{P})\)</span>,
+and <span class="math notranslate nohighlight">\(V\)</span> is the convex hull of the training dataset. An approximation
+then yields the loss function</p>
+<div class="math notranslate nohighlight">
+\[L(\theta) = \sum\limits_{k = 1}^K w_k \sum_{i = 1}^n 
+\frac{k_{h}(\xi_k - X_i)}{\sum_{j = 1}^n k_{h}(\xi_k - X_j)} 
+(Y_i - \hat{m}(X_i; \xi_k, \theta))^2 \ ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_i\)</span> and <span class="math notranslate nohighlight">\(Y_i\)</span> are the observed training data points,
+<span class="math notranslate nohighlight">\(\{(w_k, \xi_k)\}_{k=1}^K\)</span> is a set of quadrature weights and points,
+respectively, <span class="math notranslate nohighlight">\(k_h\)</span> is a kernel function with bandwidth <span class="math notranslate nohighlight">\(h\)</span>, and
+<span class="math notranslate nohighlight">\(\hat{m}\)</span> is the approximation by a neural network.
+This idea is inspired by the idea of local polynomial regression, hence it
+is called a non-parametric deep learning based approach.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>layers</strong> (<em>list</em>) – Setup for the layers the neural network. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>n_quad</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of quadrature points that should be used in the loss
+function for approximating the integral.</p>
+<blockquote>
+<div><p><a href="#id132"><span class="problematic" id="id133">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
+and the preprocessor. Possible values are given as specified
+by the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> and 
+<a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The larger the number of quadrature points the higher the effort
+in the training, since in every iteration the integration has to be 
+performed. Therfore, it is advised to not choose the number of quadrature
+points too large.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.non_parametric_regressor.NonParametricRegressor.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.non_parametric_regressor.NonParametricRegressor.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the model for a certain number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
+<a href="#id134"><span class="problematic" id="id135">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.parametric_regressor">
+<span id="parametric-regressor-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">parametric_regressor</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.parametric_regressor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.parametric_regressor.ParametricRegressor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.parametric_regressor.</span></span><span class="sig-name descname"><span class="pre">ParametricRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.parametric_regressor.ParametricRegressor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor" title="sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.dnn_estimators.neural_regressor.NeuralRegressor</span></code></a></p>
+<p>Class that estimates a conditional expectation that approximates the
+drift or diffusion coefficient, respectively. It uses a standard mean
+squared error (MSE) loss. This is similar to the idea of standard linear
+regression, which is a standard parametric approach. Due to the similarity
+to the parametric linear regression approach the name of this estimator is
+chosen to be named as a deep learning based parametric regression approach
+although by the power of the neural network as a universal approximator it 
+is rather a semi-parametric approach.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>layers</strong> (<em>list</em>) – Setup for the layers the neural network. For more information
+on the format of the layers list, c.f. <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
+and the preprocessor. Possible values are given as specified
+by the <a class="reference internal" href="#sde_calibration.dnn_estimators.neural_network.NeuralNetwork" title="sde_calibration.dnn_estimators.neural_network.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a> and 
+<a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.sde_informed_gan">
+<span id="sde-informed-gan-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_informed_gan</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.sde_informed_gan" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.sde_informed_gan.</span></span><span class="sig-name descname"><span class="pre">SDEInformedGAN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.Estimator" title="sde_calibration.estimators.Estimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.Estimator</span></code></a></p>
+<p>Estimator based a Generative Adversarial Network (GAN). The generator is
+build of two neural networks, one approximating the drift coefficient and
+the other one approximating the diffusion coefficient of the SDE describing
+a diffusion process. The SDE model is build into the generator s.t. the
+generator finally makes a prediciton of the next element in the time series.
+Therefore it is implicitly approximating the transition density function
+<span class="math notranslate nohighlight">\(p(X_{i+1} \vert X_i)\)</span> by learning how to draw samples <span class="math notranslate nohighlight">\(x\)</span>, where
+<span class="math notranslate nohighlight">\(x \sim p(X_{i+1} \vert X_i)\)</span>.
+By learning this distribution the drift and diffusion coefficient are inferred
+indirectly during the training process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>gen_n_separate_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of split layers in the generator network.</p></li>
+<li><p><strong>gen_n_concatenated_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of fully connected layers after
+concatenation of the input and the latent variables for the generator.</p></li>
+<li><p><strong>gen_n_hidden_units</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of neurons in the hidden layers of the
+generator networks.</p></li>
+<li><p><strong>gen_n_latent_variables</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of latent variables used in the generator
+networks.</p></li>
+<li><p><strong>gen_n_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of intermediate integration steps to solve the
+SDE for one timestep.</p></li>
+<li><p><strong>gen_integrator</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Integration scheme, that should be used to solve the
+SDE. Possilbe options are:</p>
+<ul>
+<li><p>euler</p></li>
+<li><p>milstein</p></li>
+</ul>
+</p></li>
+<li><p><strong>gen_diffusion_prior</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the diffusion model should be assumed
+to be a matrix to be estimated or a neural network.</p></li>
+<li><p><strong>gen_diagonal_diffusion</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the diffusion model is approximated 
+as a diagonal matrix with unknown entries or the matrix should be full
+with unknown entries. Only applies if gen_diffusion_prior is set to True.</p></li>
+<li><p><strong>gen_prior</strong> (<em>Callable</em><em>, </em><em>optional</em>) – Prior that is used to sample the latent variables
+of the generator form.</p></li>
+<li><p><strong>discr_n_separate_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of split layers in the discriminator network.</p></li>
+<li><p><strong>discr_n_concatenated_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of fully connected layers after
+concatenation of the real and fake inputs for the discriminator.</p></li>
+<li><p><strong>discr_n_hidden_units</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of neurons in the hidden layers of the
+discriminator network.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
+and the preprocessor. Possible values for the preprocessor of the estimator
+are given by the <a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Preprocessor</span></code></a> classes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the defaults of the generator parameters c.f. 
+<a class="reference internal" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator" title="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SDEInformedGenerator</span></code></a>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the generator model for a given input, that is, samples from
+the transition density are drawn. The input is first scaled according 
+to the preprocessor that is initialized, the network mode is called and 
+finally the inverse transform is applied to the outputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points for evaluating the model.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
+should be used.</p>
+<blockquote>
+<div><p><a href="#id136"><span class="problematic" id="id137">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Samples drawn from the transition density estimated by the 
+generator network.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">optimizers=[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;],</span> <span class="pre">gan_type='vanilla',</span> <span class="pre">train_metrics=None,</span> <span class="pre">val_metrics=None,</span> <span class="pre">tf_logging=None,</span> <span class="pre">update_steps=[1,</span> <span class="pre">2]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Compiles the GAN estimator to be ready for fitting. This includes 
+setting up the optimizers, metrics, and loggers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optimizers</strong> (<em>[</em><em>tf.keras.optimizers.Optimizer</em><em>, </em><em>tf.keras.optimizers.Optimizer</em><em>]</em><em>, </em><em>optional</em>) – <p>Optimizers that should be used to optimize the loss
+function of the adversarial game.</p>
+<blockquote>
+<div><p><a href="#id138"><span class="problematic" id="id139">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;]</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>gan_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Type of the GAN that should be used. Possible options
+are:</p>
+<ul>
+<li><p>vanilla</p></li>
+<li><p>wasserstein</p></li>
+<li><p>least_squares</p></li>
+<li><p>kl</p></li>
+<li><p>reverse_kl</p>
+<blockquote>
+<div><p><a href="#id140"><span class="problematic" id="id141">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+<li><p><strong>train_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>]</em><em>, </em><em>optional</em>) – Metrics that are used to monitor the training progress.
+<a href="#id142"><span class="problematic" id="id143">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>val_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metrics that are used to monitor the performance on 
+the validation set.</p>
+<blockquote>
+<div><p><a href="#id144"><span class="problematic" id="id145">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em>) – Logger to be used for logging the training progress.</p></li>
+<li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
+performed. This includes logging the</p>
+<ul>
+<li><p>weights of the network,</p></li>
+<li><p>the training metric, and</p></li>
+<li><p>the validation metric.</p></li>
+</ul>
+<p>The stored data can then be used for further visualization using
+<a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
+provided, the aforementioned parameters are not logged.</p>
+<blockquote>
+<div><p><a href="#id146"><span class="problematic" id="id147">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>update_steps</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – <p>Number of optimization steps that should be performed
+for the generator and discriminator, respectively.</p>
+<blockquote>
+<div><p><a href="#id148"><span class="problematic" id="id149">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the string specifying the type of GAN is not any
+of the valid options.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For all parameters that require a list to have the respective
+quantity for the generator as well for the discriminator, the list 
+must contain the parameter for the generator in first place and the
+corresponding parameter for the discriminator in second place.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on the GAN versions used here and some
+other material, the following material is provided:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1406.2661">Generative Adversarial Networks</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1411.1784">Conditional Generative Adversarial Nets</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1910.09106">Adversarial Regression. Generative Adversarial Networks for Non-Linear Regression: Theory and Assessment</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1611.04076">Least Squares Generative Adversarial Networks</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1701.07875">Wasserstein GAN</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1704.00028">Improved Training of Wasserstein GANs</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1606.00709">f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization</a></p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.diffusion">
+<span class="sig-name descname"><span class="pre">diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.diffusion" title="Permalink to this definition"></a></dt>
+<dd><p>Method extracts the inferred diffusion coefficient from the generator 
+and evaluates it on the points that are given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array of inputs at which the estimated diffusion term should 
+be evaluated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of approximations of the diffusion term estimated by the 
+generator.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.drift">
+<span class="sig-name descname"><span class="pre">drift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.drift" title="Permalink to this definition"></a></dt>
+<dd><p>Method extracts the inferred drift coefficient from the generator and 
+evaluates it on the points that are given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array of inputs at which the estimated drift term should be 
+evaluated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of approximations of the drift term estimated by the 
+generator.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_sample_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the adversarial training for a certain number of iterations.
+During the training trajectories of the SDE are sampled and stored in
+the history that is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs that should be performed.
+<a href="#id150"><span class="problematic" id="id151">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2000</span></code></p></li>
+<li><p><strong>n_paths</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of trajectories that should be sampled.
+<a href="#id152"><span class="problematic" id="id153">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2</span></code></p></li>
+<li><p><strong>show_sample_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the progress of the sampling
+procedure should be displayed or not.</p>
+<blockquote>
+<div><p><a href="#id154"><span class="problematic" id="id155">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the configuration of the neural network class that is required to
+create a new instance with the same setup. This includes the parameters
+for the generator networks, the discriminator networks as well as the 
+parameters for the preprocessor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of all relevant parameters given to the constructor.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.get_gan_type">
+<span class="sig-name descname"><span class="pre">get_gan_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.get_gan_type" title="Permalink to this definition"></a></dt>
+<dd><p>Gives access to the GAN type of the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>GAN type being one of the valid options for compilation.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.get_num_parameters">
+<span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the number of parameters in the whole GAN, i.e the generator 
+networks as well as the discriminator network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.sample_paths">
+<span class="sig-name descname"><span class="pre">sample_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.sample_paths" title="Permalink to this definition"></a></dt>
+<dd><p>Draw several trajectory of the generator model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_paths</strong> (<em>int</em>) – Number of trajectories that should be sampled form the
+generator model.</p></li>
+<li><p><strong>X0</strong> (<em>float</em>) – Initial value at which to start sampling.</p></li>
+<li><p><strong>T</strong> (<em>float</em>) – Final time at which to stop sampling from a trajectory. Note
+that it is assumed that <span class="math notranslate nohighlight">\(t_0 = 0\)</span>.</p></li>
+<li><p><strong>show_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the progress in sampling the trajectories
+should be displayed or not.</p>
+<blockquote>
+<div><p><a href="#id156"><span class="problematic" id="id157">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array that contains the trajectories (in the first component
+of the array). The different paths are accessed by the second index
+of the array.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.dnn_estimators.sde_informed_generator">
+<span id="sde-informed-generator-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_informed_generator</span></code> Module<a class="headerlink" href="#module-sde_calibration.dnn_estimators.sde_informed_generator" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.sde_informed_generator.</span></span><span class="sig-name descname"><span class="pre">Diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diagonal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.module.module.Module</span></code></p>
+<p>Class that builds upon the <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/Module">TensorFlow module</a>.
+It implements a diffusion model based on a matrix. The elements of the 
+rectangular matrix are then variables that are trainable, i.e. can be 
+changed by the optimizer in the training process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dimensions</strong> (<em>int</em>) – Number of dimensions <span class="math notranslate nohighlight">\(d\)</span> that should be used to 
+build the matrix <span class="math notranslate nohighlight">\(\sigma \in \mathbb{R}^{d \times d}\)</span>.</p></li>
+<li><p><strong>diagonal</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the matrix should be diagonal or not. If True then
+<span class="math notranslate nohighlight">\(\sigma = \mathrm{diag}(\sigma_1, \ldots, \sigma_d)\)</span>.</p>
+<blockquote>
+<div><p><a href="#id158"><span class="problematic" id="id159">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.Module</span></code>.
+<a href="#id160"><span class="problematic" id="id161">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the matrix with batch shape of the given input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array <span class="math notranslate nohighlight">\(x\)</span> which gives the number of batches that should 
+be returned to the matrix. In order to be conform to, e.g. the neural 
+networks that are used. The input are the points of evaluation 
+instead of the batch shape directly.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return the diffusion matrix in batched form, i.e. if 
+<span class="math notranslate nohighlight">\(x \in \mathbb{R}^{n \times d}\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the batch
+size and <span class="math notranslate nohighlight">\(d\)</span> the number of dimensions. Then the output will 
+be a tensor that lies in <span class="math notranslate nohighlight">\(\mathbb{R}^{n \times d \times d}\)</span>. 
+That means the diffusion matrix is repeated <span class="math notranslate nohighlight">\(n\)</span> times.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number of dimensions of the given array <span class="math notranslate nohighlight">\(x\)</span>
+does not match the number of dimensions of the diffusion matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.dnn_estimators.sde_informed_generator.</span></span><span class="sig-name descname"><span class="pre">SDEInformedGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n_inputs</span></em>, <em class="sig-param"><span class="pre">n_outputs</span></em>, <em class="sig-param"><span class="pre">n_separate_layers=1</span></em>, <em class="sig-param"><span class="pre">n_concatenated_layers=3</span></em>, <em class="sig-param"><span class="pre">n_hidden_units=50</span></em>, <em class="sig-param"><span class="pre">n_latent_variables=50</span></em>, <em class="sig-param"><span class="pre">n_steps=2</span></em>, <em class="sig-param"><span class="pre">integrator='euler'</span></em>, <em class="sig-param"><span class="pre">diffusion_prior=False</span></em>, <em class="sig-param"><span class="pre">diagonal_diffusion=False</span></em>, <em class="sig-param"><span class="pre">prior=&lt;function</span> <span class="pre">SDEInformedGenerator.&lt;lambda&gt;&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that build a generator for training in a GAN framework. This generator
+is aimed to calibrate a diffusion process while simultaneously estimating
+the transition density function implicitly by learning how to draw samples
+from it. This model is aware of an SDE model and approximates the drift and
+diffusion coefficient as a neural network, respectively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_inputs</strong> (<em>int</em>) – Number of inputs in the neural networks, i.e. the 
+dimensionality of the input data.</p></li>
+<li><p><strong>n_outputs</strong> (<em>int</em>) – Number of outputs in the neural network, i.e. the 
+dimensionality of the output data.</p></li>
+<li><p><strong>n_separate_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of layers that the input and the latent
+variables should be fed through separate fully connected layers.</p>
+<blockquote>
+<div><p><a href="#id162"><span class="problematic" id="id163">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>n_concatenated_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of fully connected layers that should
+be applied after the concatenation of the input and the latent variables.</p>
+<blockquote>
+<div><p><a href="#id164"><span class="problematic" id="id165">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">3</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>n_hidden_units</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of neurons in the hidden layers. They are
+chosen to be the same in all hidden layers.</p>
+<blockquote>
+<div><p><a href="#id166"><span class="problematic" id="id167">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>n_latent_variables</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of latent variables used in the generator
+networks.</p>
+<blockquote>
+<div><p><a href="#id168"><span class="problematic" id="id169">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>integrator</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Integration scheme, that should be used to solve the
+SDE. Possilbe options are:</p>
+<ul>
+<li><p>euler</p></li>
+<li><p>milstein</p>
+<blockquote>
+<div><p><a href="#id170"><span class="problematic" id="id171">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'euler'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+<li><p><strong>diffusion_prior</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the diffusion model should be assumed
+to be a matrix to be estimated or a neural network.</p>
+<blockquote>
+<div><p><a href="#id172"><span class="problematic" id="id173">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>diagonal_diffusion</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the diffusion model is approximated 
+as a diagonal matrix with unknown entries or the matrix should be full
+with unknown entries. Only applies if diffusion_prior is set to True.</p>
+<blockquote>
+<div><p><a href="#id174"><span class="problematic" id="id175">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>prior</strong> (<em>Callable</em><em>, </em><em>optional</em>) – Prior that is used to sample the latent variables of the form.
+<a href="#id176"><span class="problematic" id="id177">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">SDEInformedGenerator.&lt;lambda&gt;&gt;</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>n_steps: Number of intermediate integration steps to step from time
+<span class="math notranslate nohighlight">\(t_i\)</span> to time <span class="math notranslate nohighlight">\(t_{i+1}\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the inegrator chosen is not a valid option.</p></li>
+<li><p><strong>TypeError</strong> – If the prior function for the latent variables is not
+callable.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Draws a sample from the generator model given the values that are passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – Array of the values which is conditioned on for drawing the
+samples.</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
+should be used.</p>
+<blockquote>
+<div><p><a href="#id178"><span class="problematic" id="id179">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of samples drawn from the transition density.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.diffusion">
+<span class="sig-name descname"><span class="pre">diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.diffusion" title="Permalink to this definition"></a></dt>
+<dd><p>Method extracts the inferred diffusion coefficient and evaluates it on t
+he points that are given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array of inputs at which the estimated diffusion term should 
+be evaluated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of approximations of the diffusion term estimated by the 
+generator.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.drift">
+<span class="sig-name descname"><span class="pre">drift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.drift" title="Permalink to this definition"></a></dt>
+<dd><p>Method extracts the inferred drift coefficient and evaluates it on the 
+points that are given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>np.ndarray</em>) – Array of inputs at which the estimated drift term should be 
+evaluated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array of approximations of the drift term estimated by the 
+generator.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.get_num_parameters">
+<span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.sample_paths">
+<span class="sig-name descname"><span class="pre">sample_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.sample_paths" title="Permalink to this definition"></a></dt>
+<dd><p>Draw a trajectory of the generator model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_paths</strong> (<em>int</em>) – Number of trajectories that should be sampled form the
+generator model.</p></li>
+<li><p><strong>X0</strong> (<em>float</em>) – Initial value at which to start sampling.</p></li>
+<li><p><strong>dt</strong> (<em>float</em>) – Time step that should be used for sampling the trajectory.</p></li>
+<li><p><strong>T</strong> (<em>float</em>) – Final time at which to stop sampling from a trajectory. Note
+that it is assumed that <span class="math notranslate nohighlight">\(t_0 = 0\)</span>.</p></li>
+<li><p><strong>display</strong> (<em>Callable</em><em>, </em><em>optional</em>) – <p>Function that should be used to display the progresss 
+of the sampling process. If None is given, then the sampling
+occurs silently</p>
+<blockquote>
+<div><p><a href="#id180"><span class="problematic" id="id181">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array that contains the trajectories (in the first component
+of the array). The different paths are accessed by the second index
+of the array.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html">layers Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layers</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html#module-sde_calibration.dnn_estimators.layers.dense_mixture"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dense_mixture</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html#module-sde_calibration.dnn_estimators.layers.mc_dropout"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mc_dropout</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sde_calibration.common.html" class="btn btn-neutral float-left" title="common Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sde_calibration.dnn_estimators.layers.html" class="btn btn-neutral float-right" title="layers Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andre Breuer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+dnn_estimators Package
+======================
+
+:mod:`dnn_estimators` Package
+-----------------------------
+
+.. automodule:: sde_calibration.dnn_estimators
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`adversarial_regressor` Module
+-----------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.adversarial_regressor
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`gan_losses` Module
+------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.gan_losses
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`invariant_density_estimator` Module
+-----------------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.invariant_density_estimator
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`metrics` Module
+---------------------
+
+.. automodule:: sde_calibration.dnn_estimators.metrics
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`mixture_density_estimator` Module
+---------------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.mixture_density_estimator
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`neural_network` Module
+----------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.neural_network
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`neural_regressor` Module
+------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.neural_regressor
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`non_parametric_regressor` Module
+--------------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.non_parametric_regressor
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`parametric_regressor` Module
+----------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.parametric_regressor
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`sde_informed_gan` Module
+------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.sde_informed_gan
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`sde_informed_generator` Module
+------------------------------------
+
+.. automodule:: sde_calibration.dnn_estimators.sde_informed_generator
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+    sde_calibration.dnn_estimators.layers
+

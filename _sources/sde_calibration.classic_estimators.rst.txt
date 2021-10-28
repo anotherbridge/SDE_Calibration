@@ -1,0 +1,29 @@
+classic_estimators Package
+==========================
+
+:mod:`classic_estimators` Package
+---------------------------------
+
+.. automodule:: sde_calibration.classic_estimators
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`linear_regressor` Module
+------------------------------
+
+.. automodule:: sde_calibration.classic_estimators.linear_regressor
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`local_polynomial_estimator` Module
+----------------------------------------
+
+.. automodule:: sde_calibration.classic_estimators.local_polynomial_estimator
+    :members:
+    :special-members: __call__
+    :undoc-members:
+    :show-inheritance:
+

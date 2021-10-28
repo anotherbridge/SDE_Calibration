@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>classic_estimators Package &mdash; SDE Calibration 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="common Package" href="sde_calibration.common.html" />
+    <link rel="prev" title="sde_calibration Package" href="sde_calibration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SDE Calibration
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sde_calibration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sde_calibration.html">sde_calibration Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_calibration</span></code> Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.estimators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">estimators</span></code> Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">exceptions</span></code> Module</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="sde_calibration.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">classic_estimators Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.common.html">common Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.dnn_estimators.html">dnn_estimators Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDE Calibration</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">sde_calibration</a> &raquo;</li>
+          <li><a href="sde_calibration.html">sde_calibration Package</a> &raquo;</li>
+      <li>classic_estimators Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sde_calibration.classic_estimators.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="classic-estimators-package">
+<h1>classic_estimators Package<a class="headerlink" href="#classic-estimators-package" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">classic_estimators</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-sde_calibration.classic_estimators"></span><p>Package providing some well-known parametric and non-parametric regression
+estimators. The interface providedis similar to the deep learning based methods,
+thus enabling a consistent usage of different estimators within the SDE calibration
+package.</p>
+</section>
+<section id="module-sde_calibration.classic_estimators.linear_regressor">
+<span id="linear-regressor-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">linear_regressor</span></code> Module<a class="headerlink" href="#module-sde_calibration.classic_estimators.linear_regressor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.classic_estimators.linear_regressor.</span></span><span class="sig-name descname"><span class="pre">LinearRegressionEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stabilizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_transformation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'polynomial'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_basis_functions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">preprocessor_arguments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.RegressionEstimator" title="sde_calibration.estimators.RegressionEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.RegressionEstimator</span></code></a></p>
+<p>Standard linear regression interface including a feature transformation 
+into a different input space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>stabilizer</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Regularization parameter in order to stabilize the 
+inversion arising in the exact solution to the linear regression 
+problem.</p>
+<blockquote>
+<div><p><a href="#id6"><span class="problematic" id="id7">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1e-08</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>feature_transformation_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Gives the type of feature transformation
+that should be performed. Possible values are:</p>
+<ul>
+<li><p>polynomial</p>
+<blockquote>
+<div><p><a href="#id8"><span class="problematic" id="id9">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'polynomial'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+<li><p><strong>num_basis_functions</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Specifies the number of basis functions that 
+should be used in the feature transformation.</p>
+<blockquote>
+<div><p><a href="#id10"><span class="problematic" id="id11">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – <p>A logger that should be used for logging and/or displaying
+intermediate resutls.</p>
+<blockquote>
+<div><p><a href="#id12"><span class="problematic" id="id13">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>**preprocessor_arguments</strong> – <p>Keyword arguments that are further passed
+to the <a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessor</span> <span class="pre">class</span></code></a>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the type of feature transformation is not valid.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Calls the model behind the estimator. Transforms the input according to 
+the scaling provided, predicts using the fitted model and finally applies
+the inverse transform to the outputs of the fitted model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points of prediciton.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array containing the model predictions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>NotCompiledError: If the model is not compiled, the estimator 
+does not know whether the drift or diffusion coefficient should be
+approximated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'drift'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Method used to compile the model. For every regression estimator. It is
+crucial to specify whether the drift or diffusion coefficient should be
+approximated before the estimator can be fit or called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A string giving the mode of estimation. Possible options
+are:</p>
+<ul>
+<li><p>drift</p></li>
+<li><p>diffusion</p>
+<blockquote>
+<div><p><a href="#id14"><span class="problematic" id="id15">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the provided string for the mode is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fits the model to the provided data for the mode that the estimator is 
+compiled in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If the fit function is called before the model
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.get_num_parameters">
+<span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.linear_regressor.LinearRegressionEstimator.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of parameters in the model that is used by a certain
+estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.classic_estimators.local_polynomial_estimator">
+<span id="local-polynomial-estimator-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">local_polynomial_estimator</span></code> Module<a class="headerlink" href="#module-sde_calibration.classic_estimators.local_polynomial_estimator" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.classic_estimators.local_polynomial_estimator.</span></span><span class="sig-name descname"><span class="pre">LocalPolynomialEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polynomial_degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bandwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">preprocessor_arguments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="sde_calibration.html#sde_calibration.estimators.RegressionEstimator" title="sde_calibration.estimators.RegressionEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.RegressionEstimator</span></code></a></p>
+<p>Interface for a standard non-parametric regression estimator, that is the 
+local polynomial regression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>polynomial_degree</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Determines the degree of the local polynomial
+that should be used for the local approximation. If 0 is provided this
+is equivalent to the Nadaraya-Watson estimator.</p>
+<blockquote>
+<div><p><a href="#id16"><span class="problematic" id="id17">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>bandwidth</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Bandwidth that should be used for the kernel function in
+the approximation. If no bandwidth is provided, it is computed using 
+<a class="reference external" href="https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316849">Scott’s rule</a>.</p>
+<blockquote>
+<div><p><a href="#id18"><span class="problematic" id="id19">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – <p>A logger that should be used for logging and/or displaying
+intermediate resutls.</p>
+<blockquote>
+<div><p><a href="#id20"><span class="problematic" id="id21">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>**preprocessor_arguments</strong> – <p>Keyword arguments that are further passed
+to the <a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessor</span> <span class="pre">class</span></code></a>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on non-parametric regression estimators 
+see e.g. these <a class="reference external" href="https://bookdown.org/egarpor/PM-UC3M/npreg-kre.html">Notes for Predictive Modeling</a>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Calls the model behind the estimator. Transforms the input according to 
+the scaling provided, predicts by fitting a polynomial model locally 
+and finally applies the inverse transform to the outputs of the fitted model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points of prediciton.</p></li>
+<li><p><strong>uncertainty</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifies whether the bias and the variance should
+be approximated.</p>
+<blockquote>
+<div><p><a href="#id22"><span class="problematic" id="id23">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>show_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifies whether the computation progress should
+be displayed or not.</p>
+<blockquote>
+<div><p><a href="#id24"><span class="problematic" id="id25">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array containing the model predictions, the estimated biases, 
+and the estimated standard deviations.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple (np.ndarray, np.ndarray, np.ndarray)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>NotCompiledError: If the model is not compiled, the estimator 
+does not know whether the drift or diffusion coefficient should be
+approximated.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that if the uncertainty parameter is set to True, the
+runtime will be significantly higher!</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'drift'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Method used to compile the model. For every regression estimator. It is
+crucial to specify whether the drift or diffusion coefficient should be
+approximated before the estimator can be fit or called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A string giving the mode of estimation. Possible options
+are:</p>
+<ul>
+<li><p>drift</p></li>
+<li><p>diffusion</p>
+<blockquote>
+<div><p><a href="#id26"><span class="problematic" id="id27">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the provided string for the mode is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fits the model to the provided data for the mode that the estimator is 
+compiled in. In this case this means setting up the kernel density estimator,
+since the whole fitting part is integrated into the prediciton. This is
+because for every point a polynomial model has to be fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If the fit function is called before the model
+is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.get_num_parameters">
+<span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of parameters in the model that is used by a certain
+estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.prob">
+<span class="sig-name descname"><span class="pre">prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.classic_estimators.local_polynomial_estimator.LocalPolynomialEstimator.prob" title="Permalink to this definition"></a></dt>
+<dd><p>Estimated probability density function at the specified points by using 
+the kernel density estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points at which the probability density funciton 
+should be approximated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Estimated probability density at the points <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sde_calibration.html" class="btn btn-neutral float-left" title="sde_calibration Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sde_calibration.common.html" class="btn btn-neutral float-right" title="common Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andre Breuer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>common Package &mdash; SDE Calibration 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dnn_estimators Package" href="sde_calibration.dnn_estimators.html" />
+    <link rel="prev" title="classic_estimators Package" href="sde_calibration.classic_estimators.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SDE Calibration
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sde_calibration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sde_calibration.html">sde_calibration Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_calibration</span></code> Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.estimators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">estimators</span></code> Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.html#module-sde_calibration.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">exceptions</span></code> Module</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="sde_calibration.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.classic_estimators.html">classic_estimators Package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">common Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.dnn_estimators.html">dnn_estimators Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDE Calibration</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">sde_calibration</a> &raquo;</li>
+          <li><a href="sde_calibration.html">sde_calibration Package</a> &raquo;</li>
+      <li>common Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sde_calibration.common.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="common-package">
+<h1>common Package<a class="headerlink" href="#common-package" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">common</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-sde_calibration.common"></span><p>This package handles common functionalities that can come in handy for differnt
+types of estimators. It includes test problems, a kernel density estimation handle, 
+and some other utility functions.</p>
+</section>
+<section id="module-sde_calibration.common.kde">
+<span id="kde-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">kde</span></code> Module<a class="headerlink" href="#module-sde_calibration.common.kde" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.common.kde.</span></span><span class="sig-name descname"><span class="pre">KDE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gauss'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for estimating probability densities using kernel density estimation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<em>np.ndarray</em>) – Kernel bandwidth.</p></li>
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – Training data (NxD).</p></li>
+<li><p><strong>Y</strong> (<em>np.ndarray</em>) – Training labels (Nx1). They are used for regression.</p></li>
+<li><p><strong>kernel_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>String describing the kernel function that should be used. 
+Currently implemented options are:</p>
+<ul>
+<li><p>gauss (Gaussian kernel)</p></li>
+<li><p>parzen (Parzen window)</p>
+<blockquote>
+<div><p><a href="#id2"><span class="problematic" id="id3">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'gauss'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if the inputs X and Y have a different number of entries.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.cross_validation_error">
+<span class="sig-name descname"><span class="pre">cross_validation_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.cross_validation_error" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the leave-one-out cross-validation least-squares metric for 
+local polynomial regression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Order of the local polynomial estimator.</p></li>
+<li><p><strong>h</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – <p>Array of bandwidths that should b used for cross-validation (mx1). 
+If h is None then the bandwidth stored in the object is used.</p>
+<blockquote>
+<div><p><a href="#id4"><span class="problematic" id="id5">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cross-validation error metric for each bandwidth (mx1).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.diffusion_estimation">
+<span class="sig-name descname"><span class="pre">diffusion_estimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">p=0</span></em>, <em class="sig-param"><span class="pre">uncertainty=False</span></em>, <em class="sig-param"><span class="pre">show_progress=False</span></em>, <em class="sig-param"><span class="pre">display=&lt;built-in</span> <span class="pre">function</span> <span class="pre">print&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.diffusion_estimation" title="Permalink to this definition"></a></dt>
+<dd><p>Regression estimator for the diffusion term of a diffusion process.
+The training data X is interpreted as time series data from the 
+process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Points for evaluation of the diffusion function (nx1).</p></li>
+<li><p><strong>p</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Degree for local polynomial estimator. The default means that 
+Nadaraya-Watson regression is performed.</p>
+<blockquote>
+<div><p><a href="#id6"><span class="problematic" id="id7">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>uncertainty</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines if bias and variance should be estimated.
+<a href="#id8"><span class="problematic" id="id9">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>show_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether the progress should be displayed.
+<a href="#id10"><span class="problematic" id="id11">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>display</strong> (<em>Callable</em><em>, </em><em>optional</em>) – Function to be executed in order to display the progress
+<a href="#id12"><span class="problematic" id="id13">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;built-in</span> <span class="pre">function</span> <span class="pre">print&gt;</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Estimation of the diffusion term at the points specified by x (nx1).
+Estimated bias at points specified by x (nx1). If uncertainty flag 
+is not set None will be returned.
+Estimated variance at points specified by x (nx1). If uncertainty 
+flag is not set None will be returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple (np.ndarray, np.ndarray, np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.drift_estimation">
+<span class="sig-name descname"><span class="pre">drift_estimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">p=0</span></em>, <em class="sig-param"><span class="pre">uncertainty=False</span></em>, <em class="sig-param"><span class="pre">show_progress=False</span></em>, <em class="sig-param"><span class="pre">display=&lt;built-in</span> <span class="pre">function</span> <span class="pre">print&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.drift_estimation" title="Permalink to this definition"></a></dt>
+<dd><p>Regression estimator for the drift term of a diffusion process.
+The training data X is interpreted as time series data from the 
+process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Points for evaluation of the drift function (nx1).</p></li>
+<li><p><strong>p</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Degree for local polynomial estimator. The default means that 
+Nadaraya-Watson regression is performed.</p>
+<blockquote>
+<div><p><a href="#id14"><span class="problematic" id="id15">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>uncertainty</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines if bias and variance should be estimated.
+<a href="#id16"><span class="problematic" id="id17">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>show_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether the progress should be displayed.
+<a href="#id18"><span class="problematic" id="id19">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>display</strong> (<em>Callable</em><em>, </em><em>optional</em>) – Function to be executed in order to display the progress
+<a href="#id20"><span class="problematic" id="id21">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;built-in</span> <span class="pre">function</span> <span class="pre">print&gt;</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Estimation of the drift term at the points specified by x (nx1). 
+Estimated bias at points specified by x (nx1). If uncertainty flag 
+is not set None will be returned. 
+Estimated variance at points specified by x (nx1). If uncertainty 
+flag is not set None will be returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple (np.ndarray, np.ndarray, np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.get_bandwidth">
+<span class="sig-name descname"><span class="pre">get_bandwidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.get_bandwidth" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the current bandwidth stored in an instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Bandwidth (scalar).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.get_probability">
+<span class="sig-name descname"><span class="pre">get_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.get_probability" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates the pdf at the points specified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Points for evaluation (nxD).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Probability density at the points specified by x (nx1).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.set_bandwidth">
+<span class="sig-name descname"><span class="pre">set_bandwidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.set_bandwidth" title="Permalink to this definition"></a></dt>
+<dd><p>Sets a new bandwidth for further computations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>h</strong> (<em>float</em>) – New bandwidth (scalar).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.kde.KDE.set_data">
+<span class="sig-name descname"><span class="pre">set_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.kde.KDE.set_data" title="Permalink to this definition"></a></dt>
+<dd><p>Adjust the training data stored in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – New training data (NxD).</p></li>
+<li><p><strong>Y</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – New training labels (Nx1).
+<a href="#id22"><span class="problematic" id="id23">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if the inputs X and Y have a different number of entries.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.common.test_problems">
+<span id="test-problems-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">test_problems</span></code> Module<a class="headerlink" href="#module-sde_calibration.common.test_problems" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.common.test_problems.Problems">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.common.test_problems.</span></span><span class="sig-name descname"><span class="pre">Problems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OU'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.test_problems.Problems" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class handles some common test problem types. It allows to easily use
+some benchmark problems. Models that are included are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ornstein-Uhlenbeck (OU) process (1D and 2D)</p></li>
+<li><p>Cox-Ingersoll-Ross (CIR) process</p></li>
+<li><p>Hyperbolic process</p></li>
+<li><p>Modified CIR process</p></li>
+<li><p>Double well process</p></li>
+<li><p>Black-Scholes process</p></li>
+</ul>
+</div></blockquote>
+<p>Note that all processes – except the Black-Scholes process – are setup in 
+a way s.t. there exists an invariant distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>problem_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The process that should be setup. Possible options are:</p>
+<ul class="simple">
+<li><p>OU</p></li>
+<li><p>OU_2D</p></li>
+<li><p>CIR</p></li>
+<li><p>hyperbolic</p></li>
+<li><p>modified_CIR</p></li>
+<li><p>double_well</p></li>
+<li><dl class="simple">
+<dt>black_scholes</dt><dd><p><a href="#id24"><span class="problematic" id="id25">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'OU'</span></code></p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.test_problems.Problems.get_density">
+<span class="sig-name descname"><span class="pre">get_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.test_problems.Problems.get_density" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the invariant density function of a process given the points 
+of evaluation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>np.ndarray</em>) – Array of the points at which the density should be evaluated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The density function evaluated at the points <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – If the invariant density does not exist or
+no analytic expression exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.test_problems.Problems.get_setup">
+<span class="sig-name descname"><span class="pre">get_setup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.test_problems.Problems.get_setup" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the setup of the process that the instance is initalized with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The dictionary of parameters describing the process, the drift
+function, and the diffusion function</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple (dict, Callable, Callable)</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The notation of the parameters in the returned dictionary
+is taken from <a class="reference external" href="https://link.springer.com/book/10.1007/978-0-387-75839-8">Simulation and Inference for Stochastic Differential
+Equations</a>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.test_problems.Problems.get_transition_density">
+<span class="sig-name descname"><span class="pre">get_transition_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.test_problems.Problems.get_transition_density" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the transition density function of a process given the points 
+of evaluation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – Array of points at which the density should be evaluated.</p></li>
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of the points that are conditioned on.</p></li>
+<li><p><strong>dt</strong> (<em>float</em>) – Difference in time between the states <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The transition density function evaluated at the points 
+<span class="math notranslate nohighlight">\(y\)</span> given the points <span class="math notranslate nohighlight">\(x\)</span> and the time step <span class="math notranslate nohighlight">\(\Delta t\)</span>
+between the states.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – If no analytic expression for the 
+transition density exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.common.utils">
+<span id="utils-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">utils</span></code> Module<a class="headerlink" href="#module-sde_calibration.common.utils" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.Preprocessor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.common.utils.</span></span><span class="sig-name descname"><span class="pre">Preprocessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_scaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_scaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.Preprocessor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for preprocessing a dataset. This includes scaling the data as well
+as batching, caching, and prefetching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – Array of predictors.</p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Array of responses.
+<a href="#id26"><span class="problematic" id="id27">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Batch size that should be used to perform training on minibatches.
+<a href="#id28"><span class="problematic" id="id29">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1024</span></code></p></li>
+<li><p><strong>validation_size</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Portion of the provided dataset that should be used 
+for validation.</p>
+<blockquote>
+<div><p><a href="#id30"><span class="problematic" id="id31">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.2</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>input_scaling</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Gives the type of scaling that should be used for the 
+predictors. Possible options are:</p>
+<ul>
+<li><p>None</p></li>
+<li><p>minmax</p></li>
+<li><p>standard</p></li>
+<li><p>robust</p></li>
+</ul>
+<p>If None is chosen, no scaling of the data is performed.</p>
+<blockquote>
+<div><p><a href="#id32"><span class="problematic" id="id33">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>output_scaling</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Gives the type of scaling that should be used for the 
+response variables. Possible options are:</p>
+<ul>
+<li><p>None</p></li>
+<li><p>minmax</p></li>
+<li><p>standard</p></li>
+<li><p>robust</p></li>
+</ul>
+<p>If None is chosen, no scaling of the data is performed.</p>
+<blockquote>
+<div><p><a href="#id34"><span class="problematic" id="id35">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>input_columns</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>If not all of the predictor variables should be transformed
+this can be specified by setting the columns via his parameter. If None
+is chosen all variables are transformed.</p>
+<blockquote>
+<div><p><a href="#id36"><span class="problematic" id="id37">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>output_columns</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>If not all of the response variables should be transformed
+this can be specified by setting the columns via his parameter. If None
+is chosen all variables are transformed.</p>
+<blockquote>
+<div><p><a href="#id38"><span class="problematic" id="id39">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the in- or output scaling type is not valid.</p></li>
+<li><p><strong>ValueError</strong> – If the passed validation size does not lie in the interval [0, 1).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.Preprocessor.get_batch_size">
+<span class="sig-name descname"><span class="pre">get_batch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.Preprocessor.get_batch_size" title="Permalink to this definition"></a></dt>
+<dd><p>Gives access to the batch size that is used to preprocess the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Internally stored batch size for preprocessing.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.Preprocessor.get_dataset">
+<span class="sig-name descname"><span class="pre">get_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'train'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.Preprocessor.get_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Gives access to the transformed, but not yet preprocessed datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies if either the train or the validation
+dataset should be returned.</p>
+<blockquote>
+<div><p><a href="#id40"><span class="problematic" id="id41">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'train'</span></code></p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The transformed predictors and responses of the train and 
+validation dataset, respectively. If the validation size is chosen
+to be zero, then None will be returned in case of the validation 
+dataset.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple (np.ndarray, np.ndarray)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>If the parameter dataset_type is not one of the 
+following options:</p>
+<ul class="simple">
+<li><p>train</p></li>
+<li><p>validation</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.Preprocessor.get_processed_datasets">
+<span class="sig-name descname"><span class="pre">get_processed_datasets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.Preprocessor.get_processed_datasets" title="Permalink to this definition"></a></dt>
+<dd><p>Gives access to the train- and validation datasets after they have been 
+preprocessed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Processed train and validation datasets in TensorFlow format.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple (tf.data.Dataset, tf.data.Dataset)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.Preprocessor.inverse_transform_data">
+<span class="sig-name descname"><span class="pre">inverse_transform_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.Preprocessor.inverse_transform_data" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the inverse transformation arbitrary data according to the 
+scaling that is initialized by the given dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – The data that should be transformed by the stored processor.
+If no scaling is performed, the data will be returned as it is.</p></li>
+<li><p><strong>transform_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies whether the scaling should be performed
+according to the predictor (input) scaling or the response (output) 
+scaling.</p>
+<blockquote>
+<div><p><a href="#id42"><span class="problematic" id="id43">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'input'</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The inverse transformed data, i.e. if scaled data is passed in
+the scaling is reversed by this inverse transformation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>If the parameter transform_type has not one of the 
+following values:</p>
+<ul class="simple">
+<li><p>input</p></li>
+<li><p>output</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.Preprocessor.transform_data">
+<span class="sig-name descname"><span class="pre">transform_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.Preprocessor.transform_data" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms arbitrary data according to the scaling that is initialized
+by the given dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – The data that should be transformed by the stored processor.
+If no scaling is performed, the data will be returned as it is.</p></li>
+<li><p><strong>transform_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies whether the scaling should be performed
+according to the predictor (input) scaling or the response (output) 
+scaling.</p>
+<blockquote>
+<div><p><a href="#id44"><span class="problematic" id="id45">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'input'</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The scaled data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>If the parameter transform_type has not one of the 
+following values:</p>
+<ul class="simple">
+<li><p>input</p></li>
+<li><p>output</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.clean_directory">
+<span class="sig-prename descclassname"><span class="pre">sde_calibration.common.utils.</span></span><span class="sig-name descname"><span class="pre">clean_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.clean_directory" title="Permalink to this definition"></a></dt>
+<dd><p>Makes sure that the directory given exists. If not the directory is created.
+In case that the directory already exists it is cleaned and all 
+subdirectories are removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dir_path</strong> (<em>str</em>) – String specifiying the path of the directory to be cleaned.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sde_calibration.common.utils.setup_logger">
+<span class="sig-prename descclassname"><span class="pre">sde_calibration.common.utils.</span></span><span class="sig-name descname"><span class="pre">setup_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'logging'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%(asctime)s</span> <span class="pre">-</span> <span class="pre">%(name)s</span> <span class="pre">-</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(message)s'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.common.utils.setup_logger" title="Permalink to this definition"></a></dt>
+<dd><p>Function that sets up a basic logger to print on the console as well
+as log into a file provided one is specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the logger.
+<a href="#id46"><span class="problematic" id="id47">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'logging'</span></code></p></li>
+<li><p><strong>fname</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A path to the file that should be used for logging. If None 
+is provided the logger does not print any results to a file.</p>
+<blockquote>
+<div><p><a href="#id48"><span class="problematic" id="id49">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>level</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The logging level, i.e. the depth up to which the logger should
+notify via an output. Possible options are:</p>
+<blockquote>
+<div><ul>
+<li><p>logging.NOTSET (0)</p></li>
+<li><p>logging.DEBUG (10)</p></li>
+<li><p>logging.INFO (20)</p></li>
+<li><p>logging.WARNING (30)</p></li>
+<li><p>logging.ERROR (40)</p></li>
+<li><p>logging.CRITICAL (50)</p>
+<blockquote>
+<div><p><a href="#id50"><span class="problematic" id="id51">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">10</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>log_format</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Format string specifying the format that should be used 
+for logging. For more information on the format, c.f. <a class="reference external" href="https://docs.python.org/3/library/logging.html#logrecord-attributes">here</a>.</p>
+<blockquote>
+<div><p><a href="#id52"><span class="problematic" id="id53">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'%(asctime)s</span> <span class="pre">-</span> <span class="pre">%(name)s</span> <span class="pre">-</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(message)s'</span></code></p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A Logger object which can be used for further logging.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the provided log level is not one of the previously
+given possible options.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sde_calibration.classic_estimators.html" class="btn btn-neutral float-left" title="classic_estimators Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sde_calibration.dnn_estimators.html" class="btn btn-neutral float-right" title="dnn_estimators Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andre Breuer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

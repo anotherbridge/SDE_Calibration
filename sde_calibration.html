@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sde_calibration Package &mdash; SDE Calibration 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="classic_estimators Package" href="sde_calibration.classic_estimators.html" />
+    <link rel="prev" title="sde_calibration" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SDE Calibration
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sde_calibration</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sde_calibration Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_calibration</span></code> Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sde_calibration.estimators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">estimators</span></code> Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sde_calibration.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">exceptions</span></code> Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.classic_estimators.html">classic_estimators Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.common.html">common Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.dnn_estimators.html">dnn_estimators Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDE Calibration</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">sde_calibration</a> &raquo;</li>
+      <li>sde_calibration Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sde_calibration.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sde-calibration-package">
+<h1>sde_calibration Package<a class="headerlink" href="#sde-calibration-package" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_calibration</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-sde_calibration.__init__"></span><p>SDE calibration module. It provides an interface for several different methods
+that are used to infer the drift and diffusion coefficient of a diffusion process.
+The stochastic process is modelled by an SDE of the following form</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}X_t = b(X_t) \mathrm{d}t + \sigma(X_t) \mathrm{d}W_t \ ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(X \in \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(W \in \mathbb{R}\)</span> is a standard Wiener
+process, <span class="math notranslate nohighlight">\(b \colon \mathbb{R} \to \mathbb{R}\)</span> is the drift coefficient, 
+and <span class="math notranslate nohighlight">\(\sigma \colon \mathbb{R} \to \mathbb{R}\)</span> is the diffusion coefficient.
+The task of calibrating the SDE involves estimating the drift and diffusion 
+coefficient from an observed trajectory of the process <span class="math notranslate nohighlight">\(X_t\)</span>. 
+Note that the drift coefficient of the SDE is the same of the corresponding 
+diffusion process. In contrast, the diffusion coefficient of the SDE <span class="math notranslate nohighlight">\(\sigma\)</span>
+and the corresponding diffusion process <span class="math notranslate nohighlight">\(\Sigma\)</span> are related as follows:</p>
+<div class="math notranslate nohighlight">
+\[\Sigma(x) = \sigma^2(x) \ .\]</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on SDEs and diffusion processes, c.f.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://link.springer.com/book/10.1007/978-0-387-75839-8">Simulation and Inference for Stochastic Differential Equations</a></p></li>
+<li><p><a class="reference external" href="https://link.springer.com/book/10.1007/978-1-4939-1323-7">Stochastic Processes and Applications – Diffusion Processes, the Fokker-Planck
+and Langevin Equations</a></p></li>
+</ul>
+</div>
+</section>
+<section id="module-sde_calibration.estimators">
+<span id="estimators-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">estimators</span></code> Module<a class="headerlink" href="#module-sde_calibration.estimators" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.estimators.Estimator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.estimators.</span></span><span class="sig-name descname"><span class="pre">Estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">preprocessor_arguments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.estimators.Estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract base class for any kind of estimator that is used. It defines the 
+basic functionalities like data handling, preprocessing, and logging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The time series data that should be used for the estimation.
+The DataFrame needs to have the fields ‘t’ and ‘X’.</p></li>
+<li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – <p>A logger that should be used for logging and/or displaying
+intermediate resutls.</p>
+<blockquote>
+<div><p><a href="#id4"><span class="problematic" id="id5">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>**preprocessor_arguments</strong> – <p>Keyword arguments that are further passed
+to the <a class="reference internal" href="sde_calibration.common.html#sde_calibration.common.utils.Preprocessor" title="sde_calibration.common.utils.Preprocessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessor</span> <span class="pre">class</span></code></a>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – If the data provided is not of type pandas.DataFarme.</p></li>
+<li><p><strong>KeyError</strong> – If the data provided has keys different from <em>t</em> and <em>X</em>.</p></li>
+<li><p><strong>TypeError</strong> – If the keyword arguments provided are not valid for the
+preprocessor class.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.estimators.Estimator.fit">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.estimators.Estimator.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Method that is implement by child classes is order to perform the process
+of fitting the data. Every estimator is supposed to have this method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.estimators.Estimator.get_num_parameters">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.estimators.Estimator.get_num_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of parameters in the model that is used by a certain
+estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sde_calibration.estimators.RegressionEstimator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.estimators.</span></span><span class="sig-name descname"><span class="pre">RegressionEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">preprocessor_arguments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.estimators.RegressionEstimator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sde_calibration.estimators.Estimator" title="sde_calibration.estimators.Estimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">sde_calibration.estimators.Estimator</span></code></a></p>
+<p>Derived from the Estimator class. This class directly extracts the data
+and sets up the preprocessor in the form that is required to either estimate
+the drift or diffusion term.
+For further information on the parameters see the the documentation
+of the <a class="reference internal" href="#sde_calibration.estimators.Estimator" title="sde_calibration.estimators.Estimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.estimators.RegressionEstimator.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'drift'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.estimators.RegressionEstimator.compile" title="Permalink to this definition"></a></dt>
+<dd><p>Method used to compile the model. For every regression estimator. It is
+crucial to specify whether the drift or diffusion coefficient should be
+approximated before the estimator can be fit or called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A string giving the mode of estimation. Possible options
+are:</p>
+<ul>
+<li><p>drift</p></li>
+<li><p>diffusion</p>
+<blockquote>
+<div><p><a href="#id6"><span class="problematic" id="id7">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the provided string for the mode is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.estimators.RegressionEstimator.get_mode">
+<span class="sig-name descname"><span class="pre">get_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.estimators.RegressionEstimator.get_mode" title="Permalink to this definition"></a></dt>
+<dd><p>Interface that provides the mode that the regression estimator is currently
+operating in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Returns the current mode. Possible values are:</p>
+<ul class="simple">
+<li><p>drift</p></li>
+<li><p>diffusion</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sde_calibration.exceptions">
+<span id="exceptions-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">exceptions</span></code> Module<a class="headerlink" href="#module-sde_calibration.exceptions" title="Permalink to this headline"></a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sde_calibration.exceptions.NotCompiledError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sde_calibration.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotCompiledError</span></span><a class="headerlink" href="#sde_calibration.exceptions.NotCompiledError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception that is raised if an estimator is not yet compiled. For many methods
+this is crucial to compile in order to enable the training and prediction.</p>
+</dd></dl>
+
+</section>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sde_calibration.classic_estimators.html">classic_estimators Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.classic_estimators.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">classic_estimators</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.classic_estimators.html#module-sde_calibration.classic_estimators.linear_regressor"><code class="xref py py-mod docutils literal notranslate"><span class="pre">linear_regressor</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.classic_estimators.html#module-sde_calibration.classic_estimators.local_polynomial_estimator"><code class="xref py py-mod docutils literal notranslate"><span class="pre">local_polynomial_estimator</span></code> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sde_calibration.common.html">common Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.common.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">common</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.common.html#module-sde_calibration.common.kde"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kde</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.common.html#module-sde_calibration.common.test_problems"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test_problems</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.common.html#module-sde_calibration.common.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">utils</span></code> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sde_calibration.dnn_estimators.html">dnn_estimators Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dnn_estimators</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.adversarial_regressor"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adversarial_regressor</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.gan_losses"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gan_losses</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.invariant_density_estimator"><code class="xref py py-mod docutils literal notranslate"><span class="pre">invariant_density_estimator</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metrics</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.mixture_density_estimator"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mixture_density_estimator</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.neural_network"><code class="xref py py-mod docutils literal notranslate"><span class="pre">neural_network</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.neural_regressor"><code class="xref py py-mod docutils literal notranslate"><span class="pre">neural_regressor</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.non_parametric_regressor"><code class="xref py py-mod docutils literal notranslate"><span class="pre">non_parametric_regressor</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.parametric_regressor"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parametric_regressor</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.sde_informed_gan"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_informed_gan</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#module-sde_calibration.dnn_estimators.sde_informed_generator"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sde_informed_generator</span></code> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sde_calibration.dnn_estimators.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html">layers Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layers</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html#module-sde_calibration.dnn_estimators.layers.dense_mixture"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dense_mixture</span></code> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sde_calibration.dnn_estimators.layers.html#module-sde_calibration.dnn_estimators.layers.mc_dropout"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mc_dropout</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="sde_calibration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sde_calibration.classic_estimators.html" class="btn btn-neutral float-right" title="classic_estimators Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andre Breuer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
