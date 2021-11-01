@@ -169,7 +169,7 @@ the outputs.</p>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
 should be used.</p>
 <blockquote>
-<div><p><a href="#id44"><span class="problematic" id="id45">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id46"><span class="problematic" id="id47">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -198,7 +198,7 @@ are:</p>
 <li><p>drift</p></li>
 <li><p>diffusion</p>
 <blockquote>
-<div><p><a href="#id46"><span class="problematic" id="id47">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+<div><p><a href="#id48"><span class="problematic" id="id49">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
@@ -206,7 +206,7 @@ are:</p>
 <li><p><strong>optimizers</strong> (<em>[</em><em>tf.keras.optimizers.Optimizer</em><em>, </em><em>tf.keras.optimizers.Optimizer</em><em>]</em><em>, </em><em>optional</em>) – <p>Optimizers that should be used to optimize the loss
 function of the adversarial game.</p>
 <blockquote>
-<div><p><a href="#id48"><span class="problematic" id="id49">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;]</span></code></p>
+<div><p><a href="#id50"><span class="problematic" id="id51">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;]</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>gan_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Type of the GAN that should be used. Possible options
@@ -218,21 +218,21 @@ are:</p>
 <li><p>kl</p></li>
 <li><p>reverse_kl</p>
 <blockquote>
-<div><p><a href="#id50"><span class="problematic" id="id51">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
+<div><p><a href="#id52"><span class="problematic" id="id53">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
 </p></li>
 <li><p><strong>train_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>]</em><em>, </em><em>optional</em>) – Metrics that are used to monitor the training progress.
-<a href="#id52"><span class="problematic" id="id53">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id54"><span class="problematic" id="id55">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>val_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metrics that are used to monitor the performance on 
 the validation set.</p>
 <blockquote>
-<div><p><a href="#id54"><span class="problematic" id="id55">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id56"><span class="problematic" id="id57">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Logger to be used for logging the training progress.
-<a href="#id56"><span class="problematic" id="id57">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id58"><span class="problematic" id="id59">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
 performed. This includes logging the</p>
 <ul>
@@ -244,13 +244,13 @@ performed. This includes logging the</p>
 <a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
 provided, the aforementioned parameters are not logged.</p>
 <blockquote>
-<div><p><a href="#id58"><span class="problematic" id="id59">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id60"><span class="problematic" id="id61">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>update_steps</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – <p>Number of optimization steps that should be performed
 for the generator and discriminator, respectively.</p>
 <blockquote>
-<div><p><a href="#id60"><span class="problematic" id="id61">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code></p>
+<div><p><a href="#id62"><span class="problematic" id="id63">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -296,7 +296,7 @@ other material, the following material is provided:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs that should be performed.
-<a href="#id62"><span class="problematic" id="id63">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+<a href="#id64"><span class="problematic" id="id65">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
@@ -307,6 +307,27 @@ other material, the following material is provided:</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference internal" href="sde_calibration.html#sde_calibration.exceptions.NotCompiledError" title="sde_calibration.exceptions.NotCompiledError"><strong>NotCompiledError</strong></a> – If this method is called before the estimator 
 is compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.from_config">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.from_config" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new instance of this class from a dictionary containing the 
+configuration of the network and the data required for the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – DataFrame containing the time series data.</p></li>
+<li><p><strong>config</strong> (<em>dict</em>) – Dictionary containing the configuration of the class.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New instance setup by the given configuration.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sde_calibration.dnn_estimators.NeuralNetwork</p>
 </dd>
 </dl>
 </dd></dl>
@@ -355,6 +376,47 @@ estimator.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.load">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.load" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a saved model into an instance of the NerualNetwork class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the model is saved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Instance of the neural network class.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sde_calibration.dnn_estimators.NeuralNetwork</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If either no config or no model can be found
+in the path specified.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make it possible to load a model it is necessary that under
+the specified file path, the files <em>config.pkl</em> and <em>model.h5</em> exist.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.adversarial_regressor.AdversarialRegressor.save" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the current neural network at in the local memory. This includes
+storing the configuration as well as the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the neural network should be stored.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -376,7 +438,7 @@ are:</p>
 <li><p>kl</p></li>
 <li><p>reverse_kl</p>
 <blockquote>
-<div><p><a href="#id64"><span class="problematic" id="id65">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
+<div><p><a href="#id66"><span class="problematic" id="id67">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
@@ -469,7 +531,7 @@ on the format of the layers list, c.f. <a class="reference internal" href="#sde_
 <li><p><strong>penalty_weight</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Weight for the penalty term enforcing the neural 
 network to behave like a density function and integrate to one.</p>
 <blockquote>
-<div><p><a href="#id66"><span class="problematic" id="id67">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">20</span></code></p>
+<div><p><a href="#id68"><span class="problematic" id="id69">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">20</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
@@ -512,7 +574,7 @@ the neural network approximating the invariant density.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points at which to evaluate the density function.</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
-<a href="#id68"><span class="problematic" id="id69">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<a href="#id70"><span class="problematic" id="id71">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -588,12 +650,12 @@ Fokker-Planck equation.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
-<a href="#id70"><span class="problematic" id="id71">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+<a href="#id72"><span class="problematic" id="id73">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p></li>
 <li><p><strong>n_quad</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of quadrature points that should be used to 
 approximate the integral in the penalty term to enforce the network
 to behave like a density function.</p>
 <blockquote>
-<div><p><a href="#id72"><span class="problematic" id="id73">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">10000</span></code></p>
+<div><p><a href="#id74"><span class="problematic" id="id75">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">10000</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -625,7 +687,7 @@ is compiled.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the metric
-<a href="#id74"><span class="problematic" id="id75">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'average_log_likelihood'</span></code></p></li>
+<a href="#id76"><span class="problematic" id="id77">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'average_log_likelihood'</span></code></p></li>
 <li><p><strong>**kwargs</strong> – <p>Additional keyword arguments that can be passed. More 
 information of the keyword arguments can be found on the 
 <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics/Metric">documentation</a>
@@ -690,7 +752,7 @@ eager execution.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the metric
-<a href="#id76"><span class="problematic" id="id77">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'log_likelihood'</span></code></p></li>
+<a href="#id78"><span class="problematic" id="id79">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'log_likelihood'</span></code></p></li>
 <li><p><strong>**kwargs</strong> – <p>Additional keyword arguments that can be passed. More 
 information of the keyword arguments can be found on the 
 <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics/Metric">documentation</a>
@@ -807,7 +869,7 @@ the neural network approximating the invariant density.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>np.ndarray</em>) – Array of points at which to evaluate the density function (nx1).</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
-<a href="#id78"><span class="problematic" id="id79">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<a href="#id80"><span class="problematic" id="id81">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -865,7 +927,7 @@ should be approximated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
-<a href="#id80"><span class="problematic" id="id81">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+<a href="#id82"><span class="problematic" id="id83">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
@@ -893,7 +955,7 @@ is compiled.</p>
 conditioned.</p></li>
 <li><p><strong>y</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(y\)</span> used to compute the transition density.</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
-<a href="#id82"><span class="problematic" id="id83">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<a href="#id84"><span class="problematic" id="id85">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -918,7 +980,7 @@ conditioned.</p></li>
 conditioned.</p></li>
 <li><p><strong>y</strong> (<em>np.ndarray</em>) – Array of points <span class="math notranslate nohighlight">\(y\)</span> used to compute the transition density.</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
-<a href="#id84"><span class="problematic" id="id85">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<a href="#id86"><span class="problematic" id="id87">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -942,7 +1004,7 @@ conditioned.</p></li>
 <li><p><strong>num_samples</strong> (<em>int</em>) – Number of samples that should be drawn from the 
 estimated transition density function.</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifying whether training mode or prediction mode should be used.
-<a href="#id86"><span class="problematic" id="id87">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<a href="#id88"><span class="problematic" id="id89">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1000,7 +1062,7 @@ hidden layers. Possible values for the activations are:</p>
 <p>Moreover, it is possible to pass any instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.layers.Layer</span></code>
 class. A list can be found <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers">here</a>.</p>
 <blockquote>
-<div><p><a href="#id88"><span class="problematic" id="id89">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'tanh'</span></code></p>
+<div><p><a href="#id90"><span class="problematic" id="id91">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'tanh'</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>output_activation</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Activation function that should be applied after 
@@ -1018,24 +1080,24 @@ the output layer. Possible values for the activation are:</p>
 <p>Moreover, it is possible to pass any instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.layers.Layer</span></code>
 class. A list can be found <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers">here</a>.</p>
 <blockquote>
-<div><p><a href="#id90"><span class="problematic" id="id91">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'linear'</span></code></p>
+<div><p><a href="#id92"><span class="problematic" id="id93">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'linear'</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>regularization_penalty</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Specifies the strength of an <span class="math notranslate nohighlight">\(L^2\)</span>-regularizer
 that will be used on the weights and biases of the network. If zero is
 provided no regularization is performed.</p>
 <blockquote>
-<div><p><a href="#id92"><span class="problematic" id="id93">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div><p><a href="#id94"><span class="problematic" id="id95">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>dropout_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Dropout rate that should be used during training <strong>and</strong>
 prediction. If zero is provided no weights are dropped.</p>
 <blockquote>
-<div><p><a href="#id94"><span class="problematic" id="id95">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div><p><a href="#id96"><span class="problematic" id="id97">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.keras.models.Model</span></code> class that is created.
-<a href="#id96"><span class="problematic" id="id97">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'Model'</span></code></p></li>
+<a href="#id98"><span class="problematic" id="id99">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'Model'</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -1068,7 +1130,7 @@ smaller than zero.</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
 should be used.</p>
 <blockquote>
-<div><p><a href="#id98"><span class="problematic" id="id99">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id100"><span class="problematic" id="id101">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1091,17 +1153,17 @@ setting up the optimizer, metrics, and loggers.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>optimizer</strong> (<em>tf.keras.optimizers.Optimizer</em><em>, </em><em>optional</em>) – Optimizer that should be used to minimize the loss function.
-<a href="#id100"><span class="problematic" id="id101">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></code></p></li>
+<a href="#id102"><span class="problematic" id="id103">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></code></p></li>
 <li><p><strong>train_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – Metric that is used to monitor the training progress.
-<a href="#id102"><span class="problematic" id="id103">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id104"><span class="problematic" id="id105">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>val_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metric that is used to monitor the performance on 
 the validation set.</p>
 <blockquote>
-<div><p><a href="#id104"><span class="problematic" id="id105">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id106"><span class="problematic" id="id107">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Logger to be used for logging the training progress.
-<a href="#id106"><span class="problematic" id="id107">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id108"><span class="problematic" id="id109">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
 performed. This includes logging the</p>
 <ul>
@@ -1113,7 +1175,7 @@ performed. This includes logging the</p>
 <a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
 provided, the aforementioned parameters are not logged.</p>
 <blockquote>
-<div><p><a href="#id108"><span class="problematic" id="id109">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id110"><span class="problematic" id="id111">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1135,11 +1197,11 @@ provided, the aforementioned parameters are not logged.</p>
 <li><p><strong>validation_dataset</strong> (<em>tf.data.Dataset</em><em>, </em><em>optional</em>) – <p>TensorFlow dataset used for the validating 
 the training progress.</p>
 <blockquote>
-<div><p><a href="#id110"><span class="problematic" id="id111">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id112"><span class="problematic" id="id113">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
-<a href="#id112"><span class="problematic" id="id113">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+<a href="#id114"><span class="problematic" id="id115">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1254,7 +1316,7 @@ to a file.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>save_path</strong> (<em>str</em>) – File name of the image created.</p></li>
 <li><p><strong>show_shapes</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifies whether to display shape information or not.
-<a href="#id114"><span class="problematic" id="id115">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<a href="#id116"><span class="problematic" id="id117">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1323,7 +1385,7 @@ the outputs.</p>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
 should be used.</p>
 <blockquote>
-<div><p><a href="#id116"><span class="problematic" id="id117">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id118"><span class="problematic" id="id119">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1352,23 +1414,23 @@ are:</p>
 <li><p>drift</p></li>
 <li><p>diffusion</p>
 <blockquote>
-<div><p><a href="#id118"><span class="problematic" id="id119">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
+<div><p><a href="#id120"><span class="problematic" id="id121">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'drift'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
 </p></li>
 <li><p><strong>optimizer</strong> (<em>tf.keras.optimizers.Optimizer</em><em>, </em><em>optional</em>) – Optimizer that should be used to minimize the loss function.
-<a href="#id120"><span class="problematic" id="id121">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></code></p></li>
+<a href="#id122"><span class="problematic" id="id123">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;</span></code></p></li>
 <li><p><strong>train_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – Metric that is used to monitor the training progress.
-<a href="#id122"><span class="problematic" id="id123">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id124"><span class="problematic" id="id125">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>val_metric</strong> (<em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metric that is used to monitor the performance on 
 the validation set.</p>
 <blockquote>
-<div><p><a href="#id124"><span class="problematic" id="id125">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id126"><span class="problematic" id="id127">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>optional</em>) – Logger to be used for logging the training progress.
-<a href="#id126"><span class="problematic" id="id127">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id128"><span class="problematic" id="id129">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>tf_logging</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Specifies the path where TensorFlow logging should be 
 performed. This includes logging the</p>
 <ul>
@@ -1380,7 +1442,7 @@ performed. This includes logging the</p>
 <a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
 provided, the aforementioned parameters are not logged.</p>
 <blockquote>
-<div><p><a href="#id128"><span class="problematic" id="id129">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id130"><span class="problematic" id="id131">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1401,7 +1463,7 @@ provided, the aforementioned parameters are not logged.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
-<a href="#id130"><span class="problematic" id="id131">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+<a href="#id132"><span class="problematic" id="id133">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
@@ -1454,7 +1516,7 @@ on the format of the layers list, c.f. <a class="reference internal" href="#sde_
 <li><p><strong>n_quad</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of quadrature points that should be used in the loss
 function for approximating the integral.</p>
 <blockquote>
-<div><p><a href="#id132"><span class="problematic" id="id133">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
+<div><p><a href="#id134"><span class="problematic" id="id135">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>**kwargs</strong> – <p>Additional arguments for the setup of the neural network 
@@ -1482,7 +1544,7 @@ points too large.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations the optimizer should perform.
-<a href="#id134"><span class="problematic" id="id135">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
+<a href="#id136"><span class="problematic" id="id137">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1000</span></code></p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The history of the training comprised in a dictionary.</p>
@@ -1613,7 +1675,7 @@ finally the inverse transform is applied to the outputs.</p>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
 should be used.</p>
 <blockquote>
-<div><p><a href="#id136"><span class="problematic" id="id137">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id138"><span class="problematic" id="id139">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1639,7 +1701,7 @@ setting up the optimizers, metrics, and loggers.</p>
 <li><p><strong>optimizers</strong> (<em>[</em><em>tf.keras.optimizers.Optimizer</em><em>, </em><em>tf.keras.optimizers.Optimizer</em><em>]</em><em>, </em><em>optional</em>) – <p>Optimizers that should be used to optimize the loss
 function of the adversarial game.</p>
 <blockquote>
-<div><p><a href="#id138"><span class="problematic" id="id139">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;]</span></code></p>
+<div><p><a href="#id140"><span class="problematic" id="id141">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;tensorflow.python.keras.optimizer_v2.adam.Adam</span> <span class="pre">object&gt;]</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>gan_type</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Type of the GAN that should be used. Possible options
@@ -1651,17 +1713,17 @@ are:</p>
 <li><p>kl</p></li>
 <li><p>reverse_kl</p>
 <blockquote>
-<div><p><a href="#id140"><span class="problematic" id="id141">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
+<div><p><a href="#id142"><span class="problematic" id="id143">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'vanilla'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
 </p></li>
 <li><p><strong>train_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>]</em><em>, </em><em>optional</em>) – Metrics that are used to monitor the training progress.
-<a href="#id142"><span class="problematic" id="id143">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id144"><span class="problematic" id="id145">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>val_metrics</strong> (<em>[</em><em>tf.keras.metrics.Metric</em><em>, </em><em>tf.keras.metrics.Metric</em><em>, </em><em>optional</em>) – <p>Metrics that are used to monitor the performance on 
 the validation set.</p>
 <blockquote>
-<div><p><a href="#id144"><span class="problematic" id="id145">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id146"><span class="problematic" id="id147">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>logger</strong> (<em>logging.Logger</em>) – Logger to be used for logging the training progress.</p></li>
@@ -1676,13 +1738,13 @@ performed. This includes logging the</p>
 <a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a>. If None is 
 provided, the aforementioned parameters are not logged.</p>
 <blockquote>
-<div><p><a href="#id146"><span class="problematic" id="id147">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id148"><span class="problematic" id="id149">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>update_steps</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – <p>Number of optimization steps that should be performed
 for the generator and discriminator, respectively.</p>
 <blockquote>
-<div><p><a href="#id148"><span class="problematic" id="id149">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code></p>
+<div><p><a href="#id150"><span class="problematic" id="id151">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1768,13 +1830,13 @@ the history that is returned.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs that should be performed.
-<a href="#id150"><span class="problematic" id="id151">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2000</span></code></p></li>
+<a href="#id152"><span class="problematic" id="id153">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2000</span></code></p></li>
 <li><p><strong>n_paths</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of trajectories that should be sampled.
-<a href="#id152"><span class="problematic" id="id153">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2</span></code></p></li>
+<a href="#id154"><span class="problematic" id="id155">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">2</span></code></p></li>
 <li><p><strong>show_sample_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the progress of the sampling
 procedure should be displayed or not.</p>
 <blockquote>
-<div><p><a href="#id154"><span class="problematic" id="id155">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
+<div><p><a href="#id156"><span class="problematic" id="id157">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1853,7 +1915,7 @@ that it is assumed that <span class="math notranslate nohighlight">\(t_0 = 0\)</
 <li><p><strong>show_progress</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the progress in sampling the trajectories
 should be displayed or not.</p>
 <blockquote>
-<div><p><a href="#id156"><span class="problematic" id="id157">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
+<div><p><a href="#id158"><span class="problematic" id="id159">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">True</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -1865,6 +1927,23 @@ of the array.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.save_generator">
+<span class="sig-name descname"><span class="pre">save_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_gan.SDEInformedGAN.save_generator" title="Permalink to this definition"></a></dt>
+<dd><p>Method to save the generator model into a certain directory. The saved
+model can later be loaded into a <a class="reference internal" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator" title="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SDEInformedGenerator</span></code></a>
+object by calling the <a href="#id44"><span class="problematic" id="id45">:method:`load &lt;.sde_informed_generator.SDEInformedGenerator.load&gt;`</span></a>
+method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Directory for saving the generator model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1890,11 +1969,11 @@ build the matrix <span class="math notranslate nohighlight">\(\sigma \in \mathbb
 <li><p><strong>diagonal</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the matrix should be diagonal or not. If True then
 <span class="math notranslate nohighlight">\(\sigma = \mathrm{diag}(\sigma_1, \ldots, \sigma_d)\)</span>.</p>
 <blockquote>
-<div><p><a href="#id158"><span class="problematic" id="id159">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id160"><span class="problematic" id="id161">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">tf.Module</span></code>.
-<a href="#id160"><span class="problematic" id="id161">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<a href="#id162"><span class="problematic" id="id163">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -1929,6 +2008,79 @@ does not match the number of dimensions of the diffusion matrix.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.from_config">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.from_config" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new instance of this class from a dictionary containing the 
+configuration of the network and the data required for the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – Dictionary containing the configuration of the class.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New instance setup by the given configuration.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion" title="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion">sde_calibration.dnn_estimators.sde_informed_generator.Diffusion</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the configuration of the diffusion model that is required to 
+create a new instance with the same setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of all relevant parameters given to the constructor.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.load">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.load" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a saved diffusion model into an instance of the Diffusion class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the model is saved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Instance of the Diffusion class.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion" title="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion">sde_calibration.dnn_estimators.sde_informed_generator.Diffusion</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If either no config or no model can be found
+in the path specified.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make it possible to load a model it is necessary that under
+the specified file path, the file <em>diffusion.pkl</em> exists.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.Diffusion.save" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the diffusion model to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the model should be stored.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -1950,25 +2102,25 @@ dimensionality of the output data.</p></li>
 <li><p><strong>n_separate_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of layers that the input and the latent
 variables should be fed through separate fully connected layers.</p>
 <blockquote>
-<div><p><a href="#id162"><span class="problematic" id="id163">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p>
+<div><p><a href="#id164"><span class="problematic" id="id165">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>n_concatenated_layers</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of fully connected layers that should
 be applied after the concatenation of the input and the latent variables.</p>
 <blockquote>
-<div><p><a href="#id164"><span class="problematic" id="id165">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">3</span></code></p>
+<div><p><a href="#id166"><span class="problematic" id="id167">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">3</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>n_hidden_units</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of neurons in the hidden layers. They are
 chosen to be the same in all hidden layers.</p>
 <blockquote>
-<div><p><a href="#id166"><span class="problematic" id="id167">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
+<div><p><a href="#id168"><span class="problematic" id="id169">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>n_latent_variables</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Number of latent variables used in the generator
 networks.</p>
 <blockquote>
-<div><p><a href="#id168"><span class="problematic" id="id169">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
+<div><p><a href="#id170"><span class="problematic" id="id171">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">50</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>integrator</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Integration scheme, that should be used to solve the
@@ -1977,7 +2129,7 @@ SDE. Possilbe options are:</p>
 <li><p>euler</p></li>
 <li><p>milstein</p>
 <blockquote>
-<div><p><a href="#id170"><span class="problematic" id="id171">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'euler'</span></code></p>
+<div><p><a href="#id172"><span class="problematic" id="id173">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">'euler'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
@@ -1985,18 +2137,18 @@ SDE. Possilbe options are:</p>
 <li><p><strong>diffusion_prior</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the diffusion model should be assumed
 to be a matrix to be estimated or a neural network.</p>
 <blockquote>
-<div><p><a href="#id172"><span class="problematic" id="id173">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id174"><span class="problematic" id="id175">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>diagonal_diffusion</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether the diffusion model is approximated 
 as a diagonal matrix with unknown entries or the matrix should be full
 with unknown entries. Only applies if diffusion_prior is set to True.</p>
 <blockquote>
-<div><p><a href="#id174"><span class="problematic" id="id175">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id176"><span class="problematic" id="id177">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 <li><p><strong>prior</strong> (<em>Callable</em><em>, </em><em>optional</em>) – Prior that is used to sample the latent variables of the form.
-<a href="#id176"><span class="problematic" id="id177">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">SDEInformedGenerator.&lt;lambda&gt;&gt;</span></code></p></li>
+<a href="#id178"><span class="problematic" id="id179">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">SDEInformedGenerator.&lt;lambda&gt;&gt;</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Param</dt>
@@ -2026,7 +2178,7 @@ samples.</p></li>
 <li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Specifying whether training mode or prediction mode 
 should be used.</p>
 <blockquote>
-<div><p><a href="#id178"><span class="problematic" id="id179">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
+<div><p><a href="#id180"><span class="problematic" id="id181">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -2081,9 +2233,68 @@ generator.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.from_config">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.from_config" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new instance of this class from a dictionary containing the 
+configuration of the network and the data required for the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – Dictionary containing the configuration of the class.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New instance setup by the given configuration.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sde_calibration.dnn_estimators.SDEInformedGenerator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the configuration of the generator and discriminator networks 
+that is required to create a new instance with the same setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of all relevant parameters given to the constructor.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.get_num_parameters">
 <span class="sig-name descname"><span class="pre">get_num_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.get_num_parameters" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.load">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.load" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a saved generator_model into an instance of the NerualNetwork class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the model is saved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Instance of the neural network class.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sde_calibration.dnn_estimators.NeuralNetwork</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If either no config or no model can be found
+in the path specified.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make it possible to load a model it is necessary that under
+the specified file path, the files <em>config.pkl</em> and <em>model.h5</em> exist.</p>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.sample_paths">
@@ -2102,7 +2313,7 @@ that it is assumed that <span class="math notranslate nohighlight">\(t_0 = 0\)</
 of the sampling process. If None is given, then the sampling
 occurs silently</p>
 <blockquote>
-<div><p><a href="#id180"><span class="problematic" id="id181">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<div><p><a href="#id182"><span class="problematic" id="id183">|default|</span></a> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
 </div></blockquote>
 </p></li>
 </ul>
@@ -2114,6 +2325,21 @@ of the array.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sde_calibration.dnn_estimators.sde_informed_generator.SDEInformedGenerator.save" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the current generator network in the local memory. This includes
+storing the configuration as well as the internal models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path where the generator should be stored.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
